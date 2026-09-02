@@ -36,6 +36,10 @@ npm run dev     # http://localhost:5173
   <img src="media/07-aerial.jpg" width="49%" alt="Aerial view of Union Square">
 </p>
 
+## The brief
+
+This world was built autonomously from a single prompt, kept verbatim in [](PROMPT.md): reconstruct Union Square in Three.js, research it first with parallel agents, generate the assets offline with Blender-as-a-library, verify every milestone against photographs, and have independent reviewer agents grade the result.
+
 ## How it is built
 
 Nothing here is hand-placed by eye. The scene is assembled at load time from data:
