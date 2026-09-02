@@ -1,0 +1,110 @@
+[
+ {
+  "label": "1 Start on Powell at O'Farrell looking north (cable-car street, Westin ahead)",
+  "ok": true,
+  "info": "{\"ok\":true,\"p\":{\"x\":-68,\"y\":-4.976297163963317,\"z\":150,\"heading\":351}}",
+  "shot": "qa/walkthrough/final/01_1_start_on_powell_at_o_farrell_looking_north_cable_car_street_westin_ahead_.png"
+ },
+ {
+  "label": "2 Union Square emerges (Powell & Geary corner)",
+  "ok": true,
+  "info": "{\"ok\":true,\"p\":{\"x\":-67.50098521875472,\"y\":-1.0798076657783755,\"z\":58.94536738722114,\"heading\":351}}",
+  "shot": "qa/walkthrough/final/02_2_union_square_emerges_powell_geary_corner_.png"
+ },
+ {
+  "label": "3 Crossed Geary intersection",
+  "ok": true,
+  "info": "{\"ok\":true,\"p\":{\"x\":-63.881626696632246,\"y\":-0.733909106463493,\"z\":44.40056436319373,\"heading\":351}}",
+  "shot": "qa/walkthrough/final/03_3_crossed_geary_intersection.png"
+ },
+ {
+  "label": "4 Walked into the plaza",
+  "ok": true,
+  "info": "{\"ok\":true,\"p\":{\"x\":-33.550000000000004,\"y\":0.7,\"z\":23.75,\"heading\":40}}",
+  "shot": "qa/walkthrough/final/04_4_walked_into_the_plaza.png"
+ },
+ {
+  "label": "5 Dewey Monument in view",
+  "ok": true,
+  "info": "{\"ok\":true}",
+  "shot": "qa/walkthrough/final/05_5_dewey_monument_in_view.png"
+ },
+ {
+  "label": "6 Storefront registry populated with real businesses",
+  "ok": true,
+  "info": "{\"ok\":true,\"count\":129,\"found\":[\"Nintendo\",\"Apple\",\"Tiffany\",\"Neiman\",\"Macy\",\"Westin\"]}",
+  "shot": "qa/walkthrough/final/06_6_storefront_registry_populated_with_real_businesses.png"
+ },
+ {
+  "label": "7 Nintendo storefront visible from plaza SW corner",
+  "ok": true,
+  "info": "{\"ok\":true,\"nb\":[{\"id\":\"way/35174693:3:1\",\"name\":\"Swarovski\",\"d\":20.8},{\"id\":\"way/35174693:3:12\",\"name\":\"Dyson\",\"d\":24.7},{\"id\":\"nintendo\",\"name\":\"Nintendo SAN FRANCISCO\",\"d\":24.5}]}",
+  "shot": "qa/walkthrough/final/07_7_nintendo_storefront_visible_from_plaza_sw_corner.png"
+ },
+ {
+  "label": "8 Enter Nintendo (teleport to entrance + walk in)",
+  "ok": true,
+  "info": "{\"ok\":true,\"p\":{\"x\":-92.51551999931326,\"y\":-0.8259047614959882,\"z\":34.45,\"heading\":260.68600000000004}}",
+  "shot": "qa/walkthrough/final/08_8_enter_nintendo_teleport_to_entrance_walk_in_.png"
+ },
+ {
+  "label": "9 Interactables inside Nintendo",
+  "ok": true,
+  "info": "{\"ok\":true,\"items\":23}",
+  "shot": "qa/walkthrough/final/09_9_interactables_inside_nintendo.png"
+ },
+ {
+  "label": "10 Exited Nintendo, back on the plaza",
+  "ok": true,
+  "info": "{\"ok\":true,\"p\":{\"x\":-59.59756530503794,\"y\":0.7456193965682821,\"z\":15.35,\"heading\":351}}",
+  "shot": "qa/walkthrough/final/10_10_exited_nintendo_back_on_the_plaza.png"
+ },
+ {
+  "label": "11 East side of the square (Stockton edge)",
+  "ok": true,
+  "info": "{\"ok\":true}",
+  "shot": "qa/walkthrough/final/11_11_east_side_of_the_square_stockton_edge_.png"
+ },
+ {
+  "label": "12 Apple Union Square visible across Post St",
+  "ok": true,
+  "info": "{\"ok\":true,\"nb\":[{\"id\":\"apple-union-square\",\"name\":\"Apple Union Square\",\"d\":14.9}]}",
+  "shot": "qa/walkthrough/final/12_12_apple_union_square_visible_across_post_st.png"
+ },
+ {
+  "label": "13 Enter Apple",
+  "ok": true,
+  "info": "{\"ok\":true,\"p\":{\"x\":43.3,\"y\":1.7197609691246167,\"z\":-67.65,\"heading\":350.68600000000004}}",
+  "shot": "qa/walkthrough/final/13_13_enter_apple.png"
+ },
+ {
+  "label": "14 Move through the Apple interior (toward the stair / Genius Grove)",
+  "ok": true,
+  "info": "{\"ok\":true,\"p\":{\"x\":48.114399999999975,\"y\":2.5830047689185784,\"z\":-79.6826399997711,\"heading\":350.68600000000004}}",
+  "shot": "qa/walkthrough/final/14_14_move_through_the_apple_interior_toward_the_stair_genius_grove_.png"
+ },
+ {
+  "label": "15 Back outside on Post St",
+  "ok": true,
+  "info": "{\"ok\":true}",
+  "shot": "qa/walkthrough/final/15_15_back_outside_on_post_st.png"
+ },
+ {
+  "label": "16 Traffic and pedestrian activity",
+  "ok": true,
+  "info": "{\"ok\":true,\"s\":{\"pedestrians\":220,\"vehicles\":110,\"pedUpdateMs\":0.76,\"pedUpdateMaxMs\":0.88,\"pedStates\":{\"walk\":199,\"wait\":13,\"sit\":2,\"idle\":4,\"toSeat\":2},\"navNodes\":1398,\"navEdges\":1798,\"pedDrawCalls\":30,\"total\":112,\"moving\":49,\"stopped\":61,\"buses\":4,\"cableCars\":2,\"bikes\":6,\"links\":580,\"nodes\":38,\"ms",
+  "shot": "qa/walkthrough/final/16_16_traffic_and_pedestrian_activity.png"
+ },
+ {
+  "label": "17 Aerial view",
+  "ok": true,
+  "info": "{\"ok\":true}",
+  "shot": "qa/walkthrough/final/17_17_aerial_view.png"
+ },
+ {
+  "label": "18 Orbit mode over the square",
+  "ok": true,
+  "info": "{\"ok\":true}",
+  "shot": "qa/walkthrough/final/18_18_orbit_mode_over_the_square.png"
+ }
+]

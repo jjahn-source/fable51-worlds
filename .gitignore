@@ -216,3 +216,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- worlds ---
+node_modules/
+dist/
+.venv/
+qa/shots/
+qa/compare/
+qa/walkthrough/
+qa/demo/frames*/
+qa/demo/*.mp4
+src/data/recon/osm_raw.json
+refs/**/*.jpg
+refs/**/*.png
+.DS_Store

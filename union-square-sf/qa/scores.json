@@ -1,0 +1,18 @@
+{
+ "Geographic accuracy (geometric QA, v1 6.5 \u2192 blocking items fixed; target 9)": "7.5/10",
+ "Building recognizability (architect v2; target 9)": "5.5/10 \u2192 walls-winding fix applied after review; est. 6.5",
+ "Storefront accuracy (semantic QA; target 9)": "6/10 (76% of named census tenants placed; 119/119 side-parity)",
+ "Apple reconstruction (architect/env-art; target 9)": "7/10",
+ "Nintendo reconstruction (architect/env-art/interaction; target 9)": "7.5/10",
+ "Street-level detail (env-art v2 density; target 8.5)": "6/10",
+ "Visual fidelity (SF-local v2 recognisability; target 8.5)": "6/10",
+ "Materials (tech-art v2; target 8.5)": "6/10",
+ "Lighting (tech-art v2; target 8.5)": "7/10",
+ "Pedestrian believability (target 8)": "6.5/10",
+ "Traffic believability (target 8)": "6.5/10",
+ "Interaction quality (interaction QA; target 8.5)": "7/10 (qa/reports/interaction.md)",
+ "Navigation (walkthrough 18/18; target 9)": "8/10",
+ "Performance (tech-art v2; target 8.5)": "6/10 (57\u201389 fps street level / 34\u201342 aerial headless 1080p; night 38\u201375)",
+ "Completeness (9-cell audit; target 9)": "6.5/10",
+ "_note": "Scores are the independent reviewers' second-pass numbers (qa/reports/*_v2.md) or the v1 number when no second pass ran; they were NOT adjusted to meet the target bar. The gap to the 8\u20139/10 targets is documented in qa/discrepancies.md and the top-10 lists in each v2 report."
+}
