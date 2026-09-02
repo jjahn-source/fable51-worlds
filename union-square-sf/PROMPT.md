@@ -1,8 +1,8 @@
 > **The brief.** This is the prompt that produced this world, reproduced verbatim.
 > Everything in this directory — the reconnaissance database, the asset generators, the Three.js
 > runtime, the interiors, the QA harness and the reports — was built autonomously from it by
-> Claude Fable 5.1 agents. Read [](FINAL_QA_REPORT.md) and
-> [](qa/discrepancies.md) for what the brief asked versus what was delivered.
+> Claude Fable 5.1 agents. Read [`FINAL_QA_REPORT.md`](FINAL_QA_REPORT.md) and
+> [`qa/discrepancies.md`](qa/discrepancies.md) for what the brief asked versus what was delivered.
 
 ---
 
