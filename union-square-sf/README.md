@@ -4,7 +4,7 @@ A walkable reconstruction of San Francisco's Union Square and the blocks around 
 
 <a href="media/union-square-walkthrough.mp4"><img src="media/preview.gif" width="100%" alt="Walkthrough preview"></a>
 
-<sub>▶ **[Watch the 59-second walkthrough](media/union-square-walkthrough.mp4)** — aerial sweep → Dewey Monument → into Nintendo → down to the lower level → into Apple</sub>
+<sub>▶ **[Watch the 59-second walkthrough](media/union-square-walkthrough.mp4)** (1920×1080) — aerial sweep, Dewey Monument, into Nintendo, down to the lower level, into Apple</sub>
 
 ```bash
 npm install

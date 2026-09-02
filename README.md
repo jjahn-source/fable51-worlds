@@ -12,7 +12,7 @@ No game engine. No proprietary 3D tiles. Every building, storefront, sign, tree 
 
 <a href="union-square-sf/media/union-square-walkthrough.mp4"><img src="union-square-sf/media/preview.gif" width="100%" alt="Union Square walkthrough: aerial sweep, Dewey Monument, Nintendo SAN FRANCISCO, Apple Union Square"></a>
 
-<sub>▶ [Watch the full 59-second walkthrough](union-square-sf/media/union-square-walkthrough.mp4) · aerial → plaza → Nintendo → lower level → Apple</sub>
+<sub>▶ [Watch the full 59-second walkthrough](union-square-sf/media/union-square-walkthrough.mp4) · 1920×1080 · aerial, plaza, Nintendo, lower level, Apple</sub>
 
 The square and its surrounding blocks — Powell, Geary, Post and Stockton — on real terrain and a real street grid, with 129 identified storefronts, working traffic lights and cable cars, day/sunset/night, and two explorable interiors: **Apple Union Square** (300 Post St) and **Nintendo SAN FRANCISCO** (331 Powell St).
 
