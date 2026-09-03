@@ -1,0 +1,3106 @@
+{
+ "$schema_note": "Kyoto Southern Higashiyama walking-route spatial survey. Units: metres unless stated. Angles: degrees.",
+ "generated_utc": "2026-09-03T01:23:40Z",
+ "sources": {
+  "geometry": "OpenStreetMap via Overpass API (overpass-api.de), snapshot 2026-09-03T01:0x UTC, ODbL",
+  "elevation": "GSI (Geospatial Information Authority of Japan) getelevation API, 1 m airborne-LiDAR DEM (1m レーザ). Bare-earth ground surface.",
+  "cross_check": "ja.wikipedia.org articles 法観寺, 清水寺, 八坂神社"
+ },
+ "coordinate_frame": {
+  "anchor": {
+   "name_en": "Yasaka Pagoda (Hokan-ji five-storey pagoda)",
+   "name_ja": "法観寺 五重塔（八坂の塔）",
+   "lat": 34.9985564,
+   "lon": 135.7792488,
+   "ground_elev_m": 61.3,
+   "provenance": "OSM way 371717416 footprint centroid; ja.wikipedia gives 34.99855/135.77924 (0.9 m apart). CONFIRMED HIGH.",
+   "brief_value_rejected": {
+    "lat": 34.99806,
+    "lon": 135.78056,
+    "reason": "That coordinate lies ~186 m ESE of the pagoda, essentially on the Ninenzaka/Sannenzaka junction. Two independent sources (OSM footprint + ja.wikipedia infobox) agree on 34.99856/135.77925."
+   }
+  },
+  "axes": {
+   "x": "+X = EAST",
+   "y": "+Y = UP (metres above sea level, or local height)",
+   "z": "+Z = SOUTH (so NORTH is -Z)",
+   "handedness": "right-handed, y-up (Three.js convention)",
+   "units": "metres"
+  },
+  "metres_per_degree": {
+   "latitude": 110940.557,
+   "longitude": 91289.741,
+   "formula_lat": "111132.954 - 559.822*cos(2*phi) + 1.175*cos(4*phi)",
+   "formula_lon": "111412.84*cos(phi) - 93.5*cos(3*phi) + 0.118*cos(5*phi)",
+   "phi_deg": 34.9985564,
+   "naive_lon_check": "cos(35 deg)*111320 = 91188.2 m/deg; the rigorous WGS84 value 91289.7 is 101.5 m/deg (0.11%) larger. Use the rigorous value."
+  },
+  "conversion": {
+   "x": "(lon - lon0) * 91289.741",
+   "z": "(lat0 - lat) * 110940.557",
+   "worked_example": {
+    "landmark": "Yasaka Shrine West Romon",
+    "lat": 35.003741,
+    "lon": 135.777526,
+    "dlon": -0.0017228,
+    "dlat": 0.0051846,
+    "x_m": -157.3,
+    "z_m": -575.2,
+    "reads_as": "x = -157.3 m (157.3 m WEST of the pagoda); z = -575.2 m (negative Z = 575.2 m NORTH of the pagoda)"
+   }
+  }
+ },
+ "landmarks": [
+  {
+   "key": "shijo_hanamikoji",
+   "name_en": "Shijo-dori x Hanamikoji intersection",
+   "name_ja": "四条通×花見小路",
+   "lat": 35.003781,
+   "lon": 135.775067,
+   "x": -381.8,
+   "z": -579.6,
+   "elev_m": 39.0,
+   "confidence": "HIGH",
+   "source": "OSM way 854442449 / 27908626 junction; GSI 1m DEM",
+   "note": "North end of Hanamikoji"
+  },
+  {
+   "key": "hanamikoji_north",
+   "name_en": "Hanamikoji north end (at Shijo)",
+   "name_ja": "花見小路 北端",
+   "lat": 35.003837,
+   "lon": 135.775067,
+   "x": -381.8,
+   "z": -585.8,
+   "elev_m": 39.0,
+   "confidence": "HIGH",
+   "source": "OSM way 27908626 node",
+   "note": "Same node as Shijo crossing"
+  },
+  {
+   "key": "hanamikoji_south_kenninji",
+   "name_en": "Hanamikoji south end (Kenninji gate area)",
+   "name_ja": "花見小路 南端(建仁寺)",
+   "lat": 35.001468,
+   "lon": 135.774635,
+   "x": -421.2,
+   "z": -323.0,
+   "elev_m": 39.0,
+   "confidence": "HIGH",
+   "source": "OSM way 27908626 end; Kennin-ji way 760889100 adjacent",
+   "note": "Kennin-ji north gate forecourt"
+  },
+  {
+   "key": "shinbashi_shirakawa",
+   "name_en": "Shinbashi-dori x Shirakawa (willow corner)",
+   "name_ja": "新橋通×白川",
+   "lat": 35.005726,
+   "lon": 135.774632,
+   "x": -421.5,
+   "z": -795.4,
+   "elev_m": 39.0,
+   "confidence": "HIGH",
+   "source": "OSM ways 28412344 + 179736228 shared node",
+   "note": "The canal/willow corner; Shinbashi bridge 25 m NE"
+  },
+  {
+   "key": "shinbashi_bridge",
+   "name_en": "Shinbashi (bridge over Shirakawa)",
+   "name_ja": "新橋",
+   "lat": 35.005751,
+   "lon": 135.774709,
+   "x": -414.4,
+   "z": -798.2,
+   "elev_m": 37.7,
+   "confidence": "HIGH",
+   "source": "OSM way 546580433",
+   "note": "DEM reads water/bank level"
+  },
+  {
+   "key": "yasaka_west_romon",
+   "name_en": "Yasaka Shrine West Romon",
+   "name_ja": "八坂神社 西楼門",
+   "lat": 35.003741,
+   "lon": 135.777526,
+   "x": -157.3,
+   "z": -575.2,
+   "elev_m": 44.3,
+   "confidence": "HIGH",
+   "source": "OSM way 105449683 centroid",
+   "note": "Vermilion gate at Shijo's east end"
+  },
+  {
+   "key": "yasaka_maiden",
+   "name_en": "Yasaka Shrine Maiden (dance pavilion)",
+   "name_ja": "八坂神社 舞殿",
+   "lat": 35.003392,
+   "lon": 135.778538,
+   "x": -64.9,
+   "z": -536.5,
+   "elev_m": 49.7,
+   "confidence": "HIGH",
+   "source": "OSM way 105449709 centroid",
+   "note": "13.25 x 11.88 m"
+  },
+  {
+   "key": "yasaka_honden",
+   "name_en": "Yasaka Shrine Honden (main hall)",
+   "name_ja": "八坂神社 本殿",
+   "lat": 35.003645,
+   "lon": 135.77859,
+   "x": -60.1,
+   "z": -564.5,
+   "elev_m": 49.5,
+   "confidence": "HIGH",
+   "source": "OSM way 88108397 centroid; National Treasure 2020",
+   "note": "29.4 x 35.1 m bbox"
+  },
+  {
+   "key": "yasaka_south_romon",
+   "name_en": "Yasaka Shrine South Romon",
+   "name_ja": "八坂神社 南楼門",
+   "lat": 35.003089,
+   "lon": 135.778534,
+   "x": -65.3,
+   "z": -502.8,
+   "elev_m": 50.8,
+   "confidence": "HIGH",
+   "source": "OSM way 88108386 centroid",
+   "note": "14.3 x 19.8 m; rebuilt 1879"
+  },
+  {
+   "key": "yasaka_stone_torii",
+   "name_en": "Stone torii on Shimogawara-dori",
+   "name_ja": "八坂神社 石鳥居",
+   "lat": 35.002769,
+   "lon": 135.778501,
+   "x": -68.3,
+   "z": -467.3,
+   "elev_m": 51.2,
+   "confidence": "HIGH",
+   "source": "OSM way 455316060; built 1646",
+   "note": "13.5 m span, ~9.5 m tall (MED)"
+  },
+  {
+   "key": "maruyama_park_centre",
+   "name_en": "Maruyama Park centre",
+   "name_ja": "円山公園",
+   "lat": 35.003871,
+   "lon": 135.780764,
+   "x": 138.3,
+   "z": -589.6,
+   "elev_m": 56.7,
+   "confidence": "HIGH",
+   "source": "OSM way 54170783 bbox centroid",
+   "note": "Park bbox 226 m N-S x 545 m E-W"
+  },
+  {
+   "key": "maruyama_weeping_cherry",
+   "name_en": "Maruyama weeping cherry (Gion shidarezakura)",
+   "name_ja": "祇園枝垂桜",
+   "lat": 35.003613,
+   "lon": 135.7803,
+   "x": 96.0,
+   "z": -561.0,
+   "elev_m": 58.3,
+   "confidence": "MED",
+   "source": "OSM node 4517278152 (natural=tree, named 枝垂桜)",
+   "note": "Position from OSM only"
+  },
+  {
+   "key": "nene_north_end",
+   "name_en": "Nene-no-michi north end",
+   "name_ja": "ねねの道 北端",
+   "lat": 35.001875,
+   "lon": 135.779983,
+   "x": 67.0,
+   "z": -368.2,
+   "elev_m": 61.2,
+   "confidence": "MED",
+   "source": "OSM way 30882780 north terminus",
+   "note": "Junction with E-W link to Maruyama"
+  },
+  {
+   "key": "nene_south_end",
+   "name_en": "Nene-no-michi south end",
+   "name_ja": "ねねの道 南端",
+   "lat": 34.999264,
+   "lon": 135.779844,
+   "x": 54.3,
+   "z": -78.5,
+   "elev_m": 59.5,
+   "confidence": "MED",
+   "source": "OSM way 30882780 south terminus",
+   "note": "Meets Ninenzaka link + Yasaka-dori approach"
+  },
+  {
+   "key": "kodaiji_entrance",
+   "name_en": "Kodai-ji entrance (foot of Daidokoro-zaka)",
+   "name_ja": "高台寺 入口(台所坂下)",
+   "lat": 35.000546,
+   "lon": 135.779912,
+   "x": 60.5,
+   "z": -220.7,
+   "elev_m": 57.6,
+   "confidence": "HIGH",
+   "source": "OSM way 527257260 west end on Nene-no-michi",
+   "note": "32-step approach rises to 68.7 m at the top"
+  },
+  {
+   "key": "kodaiji_precinct",
+   "name_en": "Kodai-ji precinct centre",
+   "name_ja": "高台寺",
+   "lat": 35.000323,
+   "lon": 135.781354,
+   "x": 192.2,
+   "z": -196.0,
+   "elev_m": null,
+   "confidence": "MED",
+   "source": "OSM way 759391880 centroid",
+   "note": "Elevation not sampled at centroid"
+  },
+  {
+   "key": "ishibekoji_east",
+   "name_en": "Ishibe-koji east entrance (from Nene-no-michi)",
+   "name_ja": "石塀小路 東口",
+   "lat": 34.999934,
+   "lon": 135.77988,
+   "x": 57.6,
+   "z": -152.8,
+   "elev_m": 56.5,
+   "confidence": "MED",
+   "source": "OSM way 526198278 east end",
+   "note": "OSM maps only a 35 m stub of the alley"
+  },
+  {
+   "key": "ishibekoji_west",
+   "name_en": "Ishibe-koji west entrance",
+   "name_ja": "石塀小路 西口",
+   "lat": 34.999962,
+   "lon": 135.779494,
+   "x": 22.4,
+   "z": -155.9,
+   "elev_m": 56.0,
+   "confidence": "MED",
+   "source": "OSM way 526198278 west end",
+   "note": "Real alley is L-shaped and longer than OSM shows"
+  },
+  {
+   "key": "hokanji_pagoda",
+   "name_en": "Yasaka Pagoda / Hokan-ji five-storey pagoda  [WORLD ORIGIN]",
+   "name_ja": "法観寺 五重塔(八坂の塔)",
+   "lat": 34.9985564,
+   "lon": 135.7792488,
+   "x": 0.0,
+   "z": 0.0,
+   "elev_m": 61.3,
+   "confidence": "HIGH",
+   "source": "OSM way 371717416 centroid; ja.wikipedia 34.99855/135.77924 (agree to 0.9 m)",
+   "note": "46 m tall, 13.23 x 13.02 m base, rebuilt 1440"
+  },
+  {
+   "key": "yasakadori_west",
+   "name_en": "Yasaka-dori west end (at Higashioji)",
+   "name_ja": "八坂通 西端",
+   "lat": 34.998705,
+   "lon": 135.77719,
+   "x": -187.9,
+   "z": -16.5,
+   "elev_m": 50.6,
+   "confidence": "HIGH",
+   "source": "OSM way 24516359 start node",
+   "note": "Sightline approach start"
+  },
+  {
+   "key": "yasakadori_east",
+   "name_en": "Yasaka-dori east end (at pagoda)",
+   "name_ja": "八坂通 東端",
+   "lat": 34.998546,
+   "lon": 135.779025,
+   "x": -20.4,
+   "z": 1.2,
+   "elev_m": 59.8,
+   "confidence": "HIGH",
+   "source": "OSM way 24516359 node",
+   "note": "~21 m WSW of pagoda centre"
+  },
+  {
+   "key": "ninenzaka_north",
+   "name_en": "Ninenzaka north end",
+   "name_ja": "二年坂 北端",
+   "lat": 34.999268,
+   "lon": 135.780704,
+   "x": 132.8,
+   "z": -78.9,
+   "elev_m": 63.3,
+   "confidence": "HIGH",
+   "source": "OSM way 1491152444 start",
+   "note": "Links west to Nene-no-michi south end"
+  },
+  {
+   "key": "ninenzaka_south",
+   "name_en": "Ninenzaka south end (= Sannenzaka north end)",
+   "name_ja": "二年坂 南端",
+   "lat": 34.997998,
+   "lon": 135.780804,
+   "x": 142.0,
+   "z": 61.9,
+   "elev_m": 69.7,
+   "confidence": "HIGH",
+   "source": "OSM ways 550360170 / 526198271 shared node",
+   "note": "3-way junction with pagoda connector"
+  },
+  {
+   "key": "sannenzaka_bottom",
+   "name_en": "Sannenzaka bottom (north, at Ninenzaka)",
+   "name_ja": "産寧坂 下(北)",
+   "lat": 34.997998,
+   "lon": 135.780804,
+   "x": 142.0,
+   "z": 61.9,
+   "elev_m": 69.7,
+   "confidence": "HIGH",
+   "source": "Same node as ninenzaka_south",
+   "note": "Lower end of Sannenzaka"
+  },
+  {
+   "key": "sannenzaka_steps_base",
+   "name_en": "Sannenzaka stone steps - base (north foot)",
+   "name_ja": "産寧坂 石段下",
+   "lat": 34.996474,
+   "lon": 135.780945,
+   "x": 154.8,
+   "z": 231.0,
+   "elev_m": 75.4,
+   "confidence": "HIGH",
+   "source": "OSM way 179116810 north end (step_count=46)",
+   "note": "Foot of the 46-step flight"
+  },
+  {
+   "key": "sannenzaka_top",
+   "name_en": "Sannenzaka top (head of stone steps, at Kiyomizu-zaka)",
+   "name_ja": "産寧坂 上(南)",
+   "lat": 34.996209,
+   "lon": 135.780808,
+   "x": 142.3,
+   "z": 260.4,
+   "elev_m": 81.4,
+   "confidence": "HIGH",
+   "source": "OSM way 179116810 south end",
+   "note": "Head of the 46-step flight"
+  },
+  {
+   "key": "kiyomizuzaka_fork",
+   "name_en": "Kiyomizu-zaka / Sannenzaka / Gojo-zaka fork",
+   "name_ja": "清水坂 分岐",
+   "lat": 34.996201,
+   "lon": 135.780726,
+   "x": 134.9,
+   "z": 261.3,
+   "elev_m": 81.1,
+   "confidence": "HIGH",
+   "source": "OSM junction of ways 28514434, 27885663, 409367262",
+   "note": "Where Sannenzaka meets Kiyomizu-zaka"
+  },
+  {
+   "key": "kiyomizuzaka_bottom",
+   "name_en": "Kiyomizu-zaka bottom (Higashioji-dori end)",
+   "name_ja": "清水道 東大路口",
+   "lat": 34.997633,
+   "lon": 135.777004,
+   "x": -204.9,
+   "z": 102.4,
+   "elev_m": 51.7,
+   "confidence": "HIGH",
+   "source": "OSM node 305371734 (traffic signals, named 清水道)",
+   "note": "Route crosses Higashioji here"
+  },
+  {
+   "key": "kiyomizuzaka_top",
+   "name_en": "Kiyomizu-zaka top (temple forecourt)",
+   "name_ja": "清水坂 上",
+   "lat": 34.995513,
+   "lon": 135.782917,
+   "x": 334.9,
+   "z": 337.6,
+   "elev_m": 98.1,
+   "confidence": "HIGH",
+   "source": "OSM way 28514434 east end",
+   "note": "Below the Niomon steps"
+  },
+  {
+   "key": "higashioji_shijo",
+   "name_en": "Higashioji-dori x Shijo-dori (Gion crossing)",
+   "name_ja": "東大路通×四条通",
+   "lat": 35.003749,
+   "lon": 135.777193,
+   "x": -187.7,
+   "z": -576.1,
+   "elev_m": 41.3,
+   "confidence": "HIGH",
+   "source": "OSM node 266605718 (traffic signals, named 祇園)",
+   "note": "Northern crossing of the arterial"
+  },
+  {
+   "key": "kiyomizu_niomon",
+   "name_en": "Kiyomizu-dera Niomon (Deva gate)",
+   "name_ja": "清水寺 仁王門",
+   "lat": 34.995428,
+   "lon": 135.783339,
+   "x": 373.4,
+   "z": 347.1,
+   "elev_m": 104.5,
+   "confidence": "HIGH",
+   "source": "OSM way 102164608, height=14 m",
+   "note": "11.76 x 7.9 m footprint"
+  },
+  {
+   "key": "kiyomizu_saimon",
+   "name_en": "Kiyomizu-dera Saimon (west gate)",
+   "name_ja": "清水寺 西門",
+   "lat": 34.995144,
+   "lon": 135.783606,
+   "x": 397.8,
+   "z": 378.6,
+   "elev_m": 111.8,
+   "confidence": "HIGH",
+   "source": "OSM way 102164575 centroid",
+   "note": "15.7 x 15.4 m bbox"
+  },
+  {
+   "key": "kiyomizu_sanjunoto",
+   "name_en": "Kiyomizu-dera three-storey pagoda",
+   "name_ja": "清水寺 三重塔",
+   "lat": 34.995063,
+   "lon": 135.783837,
+   "x": 418.9,
+   "z": 387.6,
+   "elev_m": 112.2,
+   "confidence": "HIGH",
+   "source": "OSM way 102164638; ja.wikipedia height 約31 m",
+   "note": "~13 x 13 m base"
+  },
+  {
+   "key": "kiyomizu_todorokimon",
+   "name_en": "Kiyomizu-dera Todoroki-mon (middle gate)",
+   "name_ja": "清水寺 轟門",
+   "lat": 34.994773,
+   "lon": 135.78446,
+   "x": 475.7,
+   "z": 419.7,
+   "elev_m": 114.9,
+   "confidence": "HIGH",
+   "source": "OSM way 102164595",
+   "note": "8.67 x 10.2 m"
+  },
+  {
+   "key": "kiyomizu_hondo",
+   "name_en": "Kiyomizu-dera Hondo (main hall)",
+   "name_ja": "清水寺 本堂",
+   "lat": 34.994783,
+   "lon": 135.784944,
+   "x": 519.9,
+   "z": 418.6,
+   "elev_m": 115.5,
+   "confidence": "HIGH",
+   "source": "OSM way 102164590; ja.wikipedia 間口36m 奥行31m",
+   "note": "DEM = terrace/platform level"
+  },
+  {
+   "key": "kiyomizu_butai",
+   "name_en": "Kiyomizu-dera stage (butai)",
+   "name_ja": "清水寺 舞台",
+   "lat": 34.994666,
+   "lon": 135.785037,
+   "x": 528.4,
+   "z": 431.6,
+   "elev_m": 102.8,
+   "confidence": "HIGH",
+   "source": "OSM way 340294693; GSI DEM = BARE GROUND under the stage",
+   "note": "Stage FLOOR is ~115.5 m; see stage section"
+  },
+  {
+   "key": "kiyomizu_okunoin",
+   "name_en": "Kiyomizu-dera Okunoin",
+   "name_ja": "清水寺 奥ノ院",
+   "lat": 34.994573,
+   "lon": 135.785574,
+   "x": 577.4,
+   "z": 441.9,
+   "elev_m": 116.3,
+   "confidence": "HIGH",
+   "source": "OSM way 102164641",
+   "note": "18.85 x 13.45 m; has its own smaller stage"
+  },
+  {
+   "key": "kiyomizu_otowa",
+   "name_en": "Otowa-no-taki (Otowa waterfall)",
+   "name_ja": "音羽の滝",
+   "lat": 34.994421,
+   "lon": 135.785251,
+   "x": 547.9,
+   "z": 458.8,
+   "elev_m": 96.0,
+   "confidence": "HIGH",
+   "source": "OSM node 3476170467 (waterway=waterfall)",
+   "note": "In the ravine below the Hondo"
+  },
+  {
+   "key": "kiyomizu_koyasu",
+   "name_en": "Koyasu-no-to (Koyasu pagoda)",
+   "name_ja": "子安塔",
+   "lat": 34.992925,
+   "lon": 135.784958,
+   "x": 521.2,
+   "z": 624.8,
+   "elev_m": 116.6,
+   "confidence": "HIGH",
+   "source": "OSM way 333894528; ja.wikipedia height 15 m",
+   "note": "5.66 x 5.77 m base; across the valley to the south"
+  },
+  {
+   "key": "kiyomizu_jishu",
+   "name_en": "Jishu Shrine (above the Hondo)",
+   "name_ja": "地主神社",
+   "lat": 34.995173,
+   "lon": 135.784964,
+   "x": 521.7,
+   "z": 375.4,
+   "elev_m": 122.4,
+   "confidence": "HIGH",
+   "source": "OSM way 339352245",
+   "note": "Directly north of and above the Hondo"
+  },
+  {
+   "key": "chawanzaka_west",
+   "name_en": "Chawan-zaka west end (Higashioji side)",
+   "name_ja": "茶わん坂 西端",
+   "lat": 34.99524,
+   "lon": 135.778109,
+   "x": -104.1,
+   "z": 367.9,
+   "elev_m": 59.5,
+   "confidence": "HIGH",
+   "source": "OSM way 191042141 west end",
+   "note": "Alternative approach from Gojo-zaka"
+  },
+  {
+   "key": "chawanzaka_east",
+   "name_en": "Chawan-zaka east end",
+   "name_ja": "茶わん坂 東端",
+   "lat": 34.995017,
+   "lon": 135.782559,
+   "x": 302.2,
+   "z": 392.7,
+   "elev_m": 85.3,
+   "confidence": "HIGH",
+   "source": "OSM way 191042141 east end",
+   "note": "Continues by steps to the temple forecourt"
+  }
+ ],
+ "streets": [
+  {
+   "name_en": "Shijo-dori (east end: Hanamikoji -> Higashioji)",
+   "name_ja": "四条通",
+   "length_m": 194.0,
+   "bearing_deg": 92.9,
+   "elev_start_m": 39.0,
+   "elev_end_m": 41.3,
+   "grade_pct": 1.19,
+   "surface": "asphalt",
+   "stepped": false,
+   "step_count": null,
+   "carriageway_width_m": 14.0,
+   "face_to_face_width_m": 26.9,
+   "face_to_face_p10_p90": [
+    23.3,
+    30.3
+   ],
+   "start": {
+    "lat": 35.0038368,
+    "lon": 135.775067,
+    "x": -381.8,
+    "z": -585.8
+   },
+   "end": {
+    "lat": 35.0037491,
+    "lon": 135.7771926,
+    "x": -187.7,
+    "z": -576.1
+   },
+   "confidence": "HIGH",
+   "note": "4 lanes, maxspeed 40; wide footways both sides"
+  },
+  {
+   "name_en": "Hanamikoji-dori (Shijo -> Kennin-ji)",
+   "name_ja": "花見小路通",
+   "length_m": 267.3,
+   "bearing_deg": 188.5,
+   "elev_start_m": 39.0,
+   "elev_end_m": 39.0,
+   "grade_pct": 0.0,
+   "surface": "granite sett / paving stones",
+   "stepped": false,
+   "step_count": null,
+   "carriageway_width_m": 5.8,
+   "face_to_face_width_m": 9.1,
+   "face_to_face_p10_p90": [
+    8.0,
+    21.0
+   ],
+   "start": {
+    "lat": 35.0038368,
+    "lon": 135.775067,
+    "x": -381.8,
+    "z": -585.8
+   },
+   "end": {
+    "lat": 35.0014682,
+    "lon": 135.7746347,
+    "x": -421.2,
+    "z": -323.0
+   },
+   "confidence": "HIGH",
+   "note": "Flat; the classic ochaya street. Carriageway est. from face-to-face minus ~1.6 m of eaves/step-back"
+  },
+  {
+   "name_en": "Shinbashi-dori (stone-paved, Shirakawa block)",
+   "name_ja": "新橋通",
+   "length_m": 160.4,
+   "bearing_deg": 95.9,
+   "elev_start_m": 39.2,
+   "elev_end_m": 39.0,
+   "grade_pct": -0.12,
+   "surface": "granite paving stones",
+   "stepped": false,
+   "step_count": null,
+   "carriageway_width_m": 4.5,
+   "face_to_face_width_m": 6.4,
+   "face_to_face_p10_p90": [
+    5.3,
+    12.0
+   ],
+   "start": {
+    "lat": 35.0058748,
+    "lon": 135.7728808,
+    "x": -581.3,
+    "z": -811.9
+   },
+   "end": {
+    "lat": 35.0057264,
+    "lon": 135.7746325,
+    "x": -421.4,
+    "z": -795.4
+   },
+   "confidence": "HIGH",
+   "note": "One-way; Gion Shinbashi preservation district"
+  },
+  {
+   "name_en": "Shirakawa-Minami-dori (canal walk)",
+   "name_ja": "白川南通",
+   "length_m": 157.7,
+   "bearing_deg": 75.0,
+   "elev_start_m": 39.2,
+   "elev_end_m": 39.0,
+   "grade_pct": -0.13,
+   "surface": "paving stones",
+   "stepped": false,
+   "step_count": null,
+   "carriageway_width_m": 4.5,
+   "face_to_face_width_m": 23.0,
+   "face_to_face_p10_p90": [
+    21.2,
+    26.3
+   ],
+   "start": {
+    "lat": 35.0053606,
+    "lon": 135.7729641,
+    "x": -573.7,
+    "z": -754.9
+   },
+   "end": {
+    "lat": 35.0057264,
+    "lon": 135.7746325,
+    "x": -421.4,
+    "z": -795.4
+   },
+   "confidence": "HIGH",
+   "note": "OSM width=4.5 tagged; canal + willows on north side (open, so face-to-face overstates)"
+  },
+  {
+   "name_en": "Higashioji-dori (Shijo -> Yasaka-dori)",
+   "name_ja": "東大路通",
+   "length_m": 569.4,
+   "bearing_deg": 180.0,
+   "elev_start_m": 41.3,
+   "elev_end_m": 50.6,
+   "grade_pct": 1.63,
+   "surface": "asphalt",
+   "stepped": false,
+   "step_count": null,
+   "carriageway_width_m": 14.0,
+   "face_to_face_width_m": 20.0,
+   "face_to_face_p10_p90": [
+    17.7,
+    27.9
+   ],
+   "start": {
+    "lat": 35.0037491,
+    "lon": 135.7771926,
+    "x": -187.7,
+    "z": -576.1
+   },
+   "end": {
+    "lat": 34.9987052,
+    "lon": 135.7771901,
+    "x": -187.9,
+    "z": -16.5
+   },
+   "confidence": "HIGH",
+   "note": "4 lanes, maxspeed 40; the big N-S arterial"
+  },
+  {
+   "name_en": "Shimogawara-dori (stone torii -> Yasaka-dori)",
+   "name_ja": "下河原通",
+   "length_m": 466.3,
+   "bearing_deg": 176.9,
+   "elev_start_m": 51.4,
+   "elev_end_m": 57.8,
+   "grade_pct": 1.37,
+   "surface": "paving stones",
+   "stepped": false,
+   "step_count": null,
+   "carriageway_width_m": 5.5,
+   "face_to_face_width_m": 11.5,
+   "face_to_face_p10_p90": [
+    5.0,
+    18.9
+   ],
+   "start": {
+    "lat": 35.0027249,
+    "lon": 135.7784965,
+    "x": -68.7,
+    "z": -462.5
+   },
+   "end": {
+    "lat": 34.9985629,
+    "lon": 135.7787712,
+    "x": -43.6,
+    "z": -0.7
+   },
+   "confidence": "HIGH",
+   "note": "Walked north->south; runs south from the Yasaka stone torii"
+  },
+  {
+   "name_en": "Nene-no-michi (north -> south)",
+   "name_ja": "ねねの道",
+   "length_m": 290.6,
+   "bearing_deg": 182.5,
+   "elev_start_m": 61.2,
+   "elev_end_m": 59.5,
+   "grade_pct": -0.58,
+   "surface": "granite slab paving",
+   "stepped": false,
+   "step_count": null,
+   "carriageway_width_m": 6.5,
+   "face_to_face_width_m": 10.4,
+   "face_to_face_p10_p90": [
+    6.2,
+    24.2
+   ],
+   "start": {
+    "lat": 35.0018752,
+    "lon": 135.7799826,
+    "x": 67.0,
+    "z": -368.2
+   },
+   "end": {
+    "lat": 34.9992641,
+    "lon": 135.7798442,
+    "x": 54.4,
+    "z": -78.5
+   },
+   "confidence": "MED",
+   "note": "Surface untagged in OSM; granite slab in reality. Open on the Kodai-ji side"
+  },
+  {
+   "name_en": "Ishibe-koji (mapped E-W leg)",
+   "name_ja": "石塀小路",
+   "length_m": 35.2,
+   "bearing_deg": 275.0,
+   "elev_start_m": 56.5,
+   "elev_end_m": 56.0,
+   "grade_pct": -1.42,
+   "surface": "granite sett",
+   "stepped": false,
+   "step_count": null,
+   "carriageway_width_m": 2.8,
+   "face_to_face_width_m": 5.3,
+   "face_to_face_p10_p90": [
+    2.8,
+    6.2
+   ],
+   "start": {
+    "lat": 34.9999342,
+    "lon": 135.7798797,
+    "x": 57.6,
+    "z": -152.9
+   },
+   "end": {
+    "lat": 34.9999618,
+    "lon": 135.7794943,
+    "x": 22.4,
+    "z": -155.9
+   },
+   "confidence": "LOW",
+   "note": "OSM maps only a 35 m stub; the real L-shaped alley is ~100-150 m"
+  },
+  {
+   "name_en": "Yasaka-dori (the pagoda street)",
+   "name_ja": "八坂通",
+   "length_m": 180.4,
+   "bearing_deg": 100.3,
+   "elev_start_m": 50.6,
+   "elev_end_m": 59.8,
+   "grade_pct": 5.1,
+   "surface": "granite sett",
+   "stepped": false,
+   "step_count": null,
+   "carriageway_width_m": 4.2,
+   "face_to_face_width_m": 6.3,
+   "face_to_face_p10_p90": [
+    4.4,
+    17.2
+   ],
+   "start": {
+    "lat": 34.9987052,
+    "lon": 135.7771901,
+    "x": -187.9,
+    "z": -16.5
+   },
+   "end": {
+    "lat": 34.9984353,
+    "lon": 135.7790096,
+    "x": -21.8,
+    "z": 13.4
+   },
+   "confidence": "HIGH",
+   "note": "One-way, 1 lane; THE pagoda sightline street"
+  },
+  {
+   "name_en": "Ninenzaka",
+   "name_ja": "二年坂",
+   "length_m": 143.1,
+   "bearing_deg": 176.3,
+   "elev_start_m": 63.3,
+   "elev_end_m": 69.7,
+   "grade_pct": 4.47,
+   "surface": "stone paving + one stepped flight",
+   "stepped": true,
+   "step_count": 17,
+   "carriageway_width_m": 4.0,
+   "face_to_face_width_m": 6.1,
+   "face_to_face_p10_p90": [
+    4.8,
+    9.5
+   ],
+   "start": {
+    "lat": 34.9992677,
+    "lon": 135.7807044,
+    "x": 132.9,
+    "z": -78.9
+   },
+   "end": {
+    "lat": 34.9979977,
+    "lon": 135.7808045,
+    "x": 142.0,
+    "z": 62.0
+   },
+   "confidence": "HIGH",
+   "note": "OSM step_count=17 on way 30882783 (15.9 m long); width=4 tagged"
+  },
+  {
+   "name_en": "Sannenzaka",
+   "name_ja": "産寧坂/三年坂",
+   "length_m": 215.6,
+   "bearing_deg": 180.3,
+   "elev_start_m": 69.7,
+   "elev_end_m": 81.4,
+   "grade_pct": 5.43,
+   "surface": "stone paving + one stepped flight",
+   "stepped": true,
+   "step_count": 46,
+   "carriageway_width_m": 4.0,
+   "face_to_face_width_m": 7.4,
+   "face_to_face_p10_p90": [
+    4.7,
+    14.2
+   ],
+   "start": {
+    "lat": 34.9979977,
+    "lon": 135.7808045,
+    "x": 142.0,
+    "z": 62.0
+   },
+   "end": {
+    "lat": 34.996178,
+    "lon": 135.780791,
+    "x": 140.8,
+    "z": 263.9
+   },
+   "confidence": "HIGH",
+   "note": "OSM step_count=46 on way 179116810 (32.0 m long); width=4 tagged"
+  },
+  {
+   "name_en": "Kiyomizu-zaka (lower: Higashioji -> fork)",
+   "name_ja": "清水道",
+   "length_m": 373.0,
+   "bearing_deg": 115.5,
+   "elev_start_m": 51.7,
+   "elev_end_m": 81.1,
+   "grade_pct": 7.88,
+   "surface": "asphalt",
+   "stepped": false,
+   "step_count": null,
+   "carriageway_width_m": 6.0,
+   "face_to_face_width_m": 9.4,
+   "face_to_face_p10_p90": [
+    5.7,
+    23.4
+   ],
+   "start": {
+    "lat": 34.9976257,
+    "lon": 135.7770823,
+    "x": -197.8,
+    "z": 103.3
+   },
+   "end": {
+    "lat": 34.996201,
+    "lon": 135.780726,
+    "x": 134.9,
+    "z": 261.3
+   },
+   "confidence": "HIGH",
+   "note": "OSM names this 清水道; colloquially the lower Kiyomizu-zaka"
+  },
+  {
+   "name_en": "Kiyomizu-zaka (upper: fork -> temple)",
+   "name_ja": "清水坂",
+   "length_m": 221.0,
+   "bearing_deg": 111.0,
+   "elev_start_m": 81.1,
+   "elev_end_m": 98.1,
+   "grade_pct": 7.69,
+   "surface": "paving stones",
+   "stepped": false,
+   "step_count": null,
+   "carriageway_width_m": 5.5,
+   "face_to_face_width_m": 7.6,
+   "face_to_face_p10_p90": [
+    6.5,
+    13.6
+   ],
+   "start": {
+    "lat": 34.9962012,
+    "lon": 135.7807256,
+    "x": 134.8,
+    "z": 261.3
+   },
+   "end": {
+    "lat": 34.9955134,
+    "lon": 135.7829169,
+    "x": 334.9,
+    "z": 337.6
+   },
+   "confidence": "HIGH",
+   "note": "Pedestrianised shopping street"
+  },
+  {
+   "name_en": "Chawan-zaka",
+   "name_ja": "茶わん坂",
+   "length_m": 406.1,
+   "bearing_deg": 93.5,
+   "elev_start_m": 59.5,
+   "elev_end_m": 85.3,
+   "grade_pct": 6.35,
+   "surface": "asphalt",
+   "stepped": false,
+   "step_count": null,
+   "carriageway_width_m": 5.0,
+   "face_to_face_width_m": 7.1,
+   "face_to_face_p10_p90": [
+    6.3,
+    21.8
+   ],
+   "start": {
+    "lat": 34.9952404,
+    "lon": 135.7781095,
+    "x": -104.0,
+    "z": 367.9
+   },
+   "end": {
+    "lat": 34.9950166,
+    "lon": 135.7825595,
+    "x": 302.2,
+    "z": 392.7
+   },
+   "confidence": "HIGH",
+   "note": "The potters' street; alternative approach, joins by steps at the top"
+  },
+  {
+   "name_en": "Pagoda -> Sannenzaka connector",
+   "name_ja": "(八坂通東延長)",
+   "length_m": 173.4,
+   "bearing_deg": 106.6,
+   "elev_start_m": 60.0,
+   "elev_end_m": 69.7,
+   "grade_pct": 5.59,
+   "surface": "stone paving",
+   "stepped": false,
+   "step_count": null,
+   "carriageway_width_m": 5.0,
+   "face_to_face_width_m": 12.4,
+   "face_to_face_p10_p90": [
+    5.6,
+    23.7
+   ],
+   "start": {
+    "lat": 34.9984353,
+    "lon": 135.7790096,
+    "x": -21.8,
+    "z": 13.4
+   },
+   "end": {
+    "lat": 34.9979977,
+    "lon": 135.7808045,
+    "x": 142.0,
+    "z": 62.0
+   },
+   "confidence": "MED",
+   "note": "OSM tags this 三年坂; functionally the pagoda-to-Sannenzaka-head link"
+  }
+ ],
+ "elevation_profile": {
+  "description": "Canonical walk: Shijo x Hanamikoji -> Shijo-dori east -> Yasaka Shrine West Romon -> Maiden -> Maruyama Park -> Nene-no-michi -> Ninenzaka -> Sannenzaka -> Kiyomizu-zaka -> Kiyomizu-dera Hondo/stage. Sampled every 20 m; ground elevation from GSI 1 m LiDAR DEM.",
+  "total_length_m": 2308.7,
+  "start_elev_m": 39.1,
+  "end_deck_elev_m": 115.5,
+  "net_gain_m": 76.4,
+  "cumulative_ascent_m": 101.0,
+  "cumulative_descent_m": 24.6,
+  "min_ground_m": 39.1,
+  "max_ground_m": 115.5,
+  "points": [
+   {
+    "cum_m": 0.0,
+    "lat": 35.0038368,
+    "lon": 135.775067,
+    "x": -381.8,
+    "z": -585.8,
+    "ground_elev_m": 39.1,
+    "walk_surface_elev_m": 39.1,
+    "leg": "Shijo-dori (Hanamikoji -> Higashioji)",
+    "note": ""
+   },
+   {
+    "cum_m": 20.0,
+    "lat": 35.0038353,
+    "lon": 135.7752866,
+    "x": -361.7,
+    "z": -585.6,
+    "ground_elev_m": 39.1,
+    "walk_surface_elev_m": 39.1,
+    "leg": "Shijo-dori (Hanamikoji -> Higashioji)",
+    "note": ""
+   },
+   {
+    "cum_m": 40.0,
+    "lat": 35.0038327,
+    "lon": 135.7755061,
+    "x": -341.7,
+    "z": -585.4,
+    "ground_elev_m": 39.2,
+    "walk_surface_elev_m": 39.2,
+    "leg": "Shijo-dori (Hanamikoji -> Higashioji)",
+    "note": ""
+   },
+   {
+    "cum_m": 60.0,
+    "lat": 35.0038301,
+    "lon": 135.7757257,
+    "x": -321.6,
+    "z": -585.1,
+    "ground_elev_m": 39.4,
+    "walk_surface_elev_m": 39.4,
+    "leg": "Shijo-dori (Hanamikoji -> Higashioji)",
+    "note": ""
+   },
+   {
+    "cum_m": 80.0,
+    "lat": 35.0038274,
+    "lon": 135.7759453,
+    "x": -301.6,
+    "z": -584.8,
+    "ground_elev_m": 39.6,
+    "walk_surface_elev_m": 39.6,
+    "leg": "Shijo-dori (Hanamikoji -> Higashioji)",
+    "note": ""
+   },
+   {
+    "cum_m": 100.0,
+    "lat": 35.0038201,
+    "lon": 135.7761646,
+    "x": -281.6,
+    "z": -584.0,
+    "ground_elev_m": 39.8,
+    "walk_surface_elev_m": 39.8,
+    "leg": "Shijo-dori (Hanamikoji -> Higashioji)",
+    "note": ""
+   },
+   {
+    "cum_m": 120.0,
+    "lat": 35.0038109,
+    "lon": 135.7763839,
+    "x": -261.5,
+    "z": -582.9,
+    "ground_elev_m": 40.0,
+    "walk_surface_elev_m": 40.0,
+    "leg": "Shijo-dori (Hanamikoji -> Higashioji)",
+    "note": ""
+   },
+   {
+    "cum_m": 140.0,
+    "lat": 35.0037978,
+    "lon": 135.7766029,
+    "x": -241.5,
+    "z": -581.5,
+    "ground_elev_m": 40.3,
+    "walk_surface_elev_m": 40.3,
+    "leg": "Shijo-dori (Hanamikoji -> Higashioji)",
+    "note": ""
+   },
+   {
+    "cum_m": 160.0,
+    "lat": 35.0037817,
+    "lon": 135.7768216,
+    "x": -221.6,
+    "z": -579.7,
+    "ground_elev_m": 40.7,
+    "walk_surface_elev_m": 40.7,
+    "leg": "Shijo-dori (Hanamikoji -> Higashioji)",
+    "note": ""
+   },
+   {
+    "cum_m": 180.0,
+    "lat": 35.0037636,
+    "lon": 135.77704,
+    "x": -201.6,
+    "z": -577.7,
+    "ground_elev_m": 41.1,
+    "walk_surface_elev_m": 41.1,
+    "leg": "Shijo-dori (Hanamikoji -> Higashioji)",
+    "note": ""
+   },
+   {
+    "cum_m": 200.0,
+    "lat": 35.0037475,
+    "lon": 135.7772586,
+    "x": -181.7,
+    "z": -575.9,
+    "ground_elev_m": 41.4,
+    "walk_surface_elev_m": 41.4,
+    "leg": "Higashioji crossing -> Yasaka West Romon",
+    "note": ""
+   },
+   {
+    "cum_m": 220.0,
+    "lat": 35.0037422,
+    "lon": 135.7774781,
+    "x": -161.6,
+    "z": -575.3,
+    "ground_elev_m": 43.9,
+    "walk_surface_elev_m": 43.9,
+    "leg": "Higashioji crossing -> Yasaka West Romon",
+    "note": ""
+   },
+   {
+    "cum_m": 240.0,
+    "lat": 35.0037314,
+    "lon": 135.7776972,
+    "x": -141.6,
+    "z": -574.1,
+    "ground_elev_m": 44.7,
+    "walk_surface_elev_m": 44.7,
+    "leg": "West Romon -> Maiden (precinct)",
+    "note": ""
+   },
+   {
+    "cum_m": 260.0,
+    "lat": 35.0037154,
+    "lon": 135.7779153,
+    "x": -121.7,
+    "z": -572.3,
+    "ground_elev_m": 46.3,
+    "walk_surface_elev_m": 46.3,
+    "leg": "West Romon -> Maiden (precinct)",
+    "note": ""
+   },
+   {
+    "cum_m": 280.0,
+    "lat": 35.0036535,
+    "lon": 135.7781215,
+    "x": -102.9,
+    "z": -565.5,
+    "ground_elev_m": 48.8,
+    "walk_surface_elev_m": 48.8,
+    "leg": "West Romon -> Maiden (precinct)",
+    "note": ""
+   },
+   {
+    "cum_m": 300.0,
+    "lat": 35.0035824,
+    "lon": 135.7783202,
+    "x": -84.8,
+    "z": -557.6,
+    "ground_elev_m": 49.2,
+    "walk_surface_elev_m": 49.2,
+    "leg": "West Romon -> Maiden (precinct)",
+    "note": ""
+   },
+   {
+    "cum_m": 320.0,
+    "lat": 35.0034511,
+    "lon": 135.7784703,
+    "x": -71.1,
+    "z": -543.0,
+    "ground_elev_m": 49.5,
+    "walk_surface_elev_m": 49.5,
+    "leg": "West Romon -> Maiden (precinct)",
+    "note": ""
+   },
+   {
+    "cum_m": 340.0,
+    "lat": 35.0033935,
+    "lon": 135.7786586,
+    "x": -53.9,
+    "z": -536.6,
+    "ground_elev_m": 49.5,
+    "walk_surface_elev_m": 49.5,
+    "leg": "Maiden -> Maruyama Park weeping cherry",
+    "note": ""
+   },
+   {
+    "cum_m": 360.0,
+    "lat": 35.0033961,
+    "lon": 135.7788782,
+    "x": -33.8,
+    "z": -536.9,
+    "ground_elev_m": 49.8,
+    "walk_surface_elev_m": 49.8,
+    "leg": "Maiden -> Maruyama Park weeping cherry",
+    "note": ""
+   },
+   {
+    "cum_m": 380.0,
+    "lat": 35.0033988,
+    "lon": 135.7790977,
+    "x": -13.8,
+    "z": -537.2,
+    "ground_elev_m": 50.9,
+    "walk_surface_elev_m": 50.9,
+    "leg": "Maiden -> Maruyama Park weeping cherry",
+    "note": ""
+   },
+   {
+    "cum_m": 400.0,
+    "lat": 35.0034281,
+    "lon": 135.7793122,
+    "x": 5.8,
+    "z": -540.5,
+    "ground_elev_m": 52.7,
+    "walk_surface_elev_m": 52.7,
+    "leg": "Maiden -> Maruyama Park weeping cherry",
+    "note": ""
+   },
+   {
+    "cum_m": 420.0,
+    "lat": 35.0034806,
+    "lon": 135.7795222,
+    "x": 25.0,
+    "z": -546.3,
+    "ground_elev_m": 53.6,
+    "walk_surface_elev_m": 53.6,
+    "leg": "Maiden -> Maruyama Park weeping cherry",
+    "note": ""
+   },
+   {
+    "cum_m": 440.0,
+    "lat": 35.0035331,
+    "lon": 135.7797322,
+    "x": 44.1,
+    "z": -552.1,
+    "ground_elev_m": 54.2,
+    "walk_surface_elev_m": 54.2,
+    "leg": "Maiden -> Maruyama Park weeping cherry",
+    "note": ""
+   },
+   {
+    "cum_m": 460.0,
+    "lat": 35.0035685,
+    "lon": 135.779947,
+    "x": 63.7,
+    "z": -556.0,
+    "ground_elev_m": 54.5,
+    "walk_surface_elev_m": 54.5,
+    "leg": "Maiden -> Maruyama Park weeping cherry",
+    "note": ""
+   },
+   {
+    "cum_m": 480.0,
+    "lat": 35.0035959,
+    "lon": 135.780164,
+    "x": 83.5,
+    "z": -559.1,
+    "ground_elev_m": 56.4,
+    "walk_surface_elev_m": 56.4,
+    "leg": "Maiden -> Maruyama Park weeping cherry",
+    "note": ""
+   },
+   {
+    "cum_m": 500.0,
+    "lat": 35.0035535,
+    "lon": 135.780338,
+    "x": 99.4,
+    "z": -554.4,
+    "ground_elev_m": 57.6,
+    "walk_surface_elev_m": 57.6,
+    "leg": "Maruyama Park -> park south exit",
+    "note": ""
+   },
+   {
+    "cum_m": 520.0,
+    "lat": 35.0033941,
+    "lon": 135.7804399,
+    "x": 108.7,
+    "z": -536.7,
+    "ground_elev_m": 57.7,
+    "walk_surface_elev_m": 57.7,
+    "leg": "Maruyama Park -> park south exit",
+    "note": ""
+   },
+   {
+    "cum_m": 540.0,
+    "lat": 35.0032333,
+    "lon": 135.7805381,
+    "x": 117.7,
+    "z": -518.9,
+    "ground_elev_m": 59.2,
+    "walk_surface_elev_m": 59.2,
+    "leg": "Maruyama Park -> park south exit",
+    "note": ""
+   },
+   {
+    "cum_m": 560.0,
+    "lat": 35.0030703,
+    "lon": 135.780631,
+    "x": 126.2,
+    "z": -500.8,
+    "ground_elev_m": 60.4,
+    "walk_surface_elev_m": 60.4,
+    "leg": "Maruyama Park -> park south exit",
+    "note": ""
+   },
+   {
+    "cum_m": 580.0,
+    "lat": 35.002902,
+    "lon": 135.7806979,
+    "x": 132.3,
+    "z": -482.1,
+    "ground_elev_m": 62.0,
+    "walk_surface_elev_m": 62.0,
+    "leg": "Park south -> Nene link (E-W)",
+    "note": ""
+   },
+   {
+    "cum_m": 600.0,
+    "lat": 35.0027232,
+    "lon": 135.7807059,
+    "x": 133.0,
+    "z": -462.3,
+    "ground_elev_m": 63.0,
+    "walk_surface_elev_m": 63.0,
+    "leg": "Park south -> Nene link (E-W)",
+    "note": ""
+   },
+   {
+    "cum_m": 620.0,
+    "lat": 35.002544,
+    "lon": 135.780687,
+    "x": 131.3,
+    "z": -442.4,
+    "ground_elev_m": 63.4,
+    "walk_surface_elev_m": 63.4,
+    "leg": "Park south -> Nene link (E-W)",
+    "note": ""
+   },
+   {
+    "cum_m": 640.0,
+    "lat": 35.0023648,
+    "lon": 135.7806681,
+    "x": 129.6,
+    "z": -422.5,
+    "ground_elev_m": 63.8,
+    "walk_surface_elev_m": 63.8,
+    "leg": "Park south -> Nene link (E-W)",
+    "note": ""
+   },
+   {
+    "cum_m": 660.0,
+    "lat": 35.0021856,
+    "lon": 135.7806493,
+    "x": 127.9,
+    "z": -402.6,
+    "ground_elev_m": 64.3,
+    "walk_surface_elev_m": 64.3,
+    "leg": "Park south -> Nene link (E-W)",
+    "note": ""
+   },
+   {
+    "cum_m": 680.0,
+    "lat": 35.0020064,
+    "lon": 135.7806303,
+    "x": 126.1,
+    "z": -382.7,
+    "ground_elev_m": 64.7,
+    "walk_surface_elev_m": 64.7,
+    "leg": "Park south -> Nene link (E-W)",
+    "note": ""
+   },
+   {
+    "cum_m": 700.0,
+    "lat": 35.0018962,
+    "lon": 135.7807471,
+    "x": 136.8,
+    "z": -370.5,
+    "ground_elev_m": 65.9,
+    "walk_surface_elev_m": 65.9,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 720.0,
+    "lat": 35.0018305,
+    "lon": 135.7809515,
+    "x": 155.4,
+    "z": -363.2,
+    "ground_elev_m": 67.2,
+    "walk_surface_elev_m": 67.2,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 740.0,
+    "lat": 35.0017649,
+    "lon": 135.781156,
+    "x": 174.1,
+    "z": -356.0,
+    "ground_elev_m": 69.1,
+    "walk_surface_elev_m": 69.1,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 760.0,
+    "lat": 35.0016993,
+    "lon": 135.7813604,
+    "x": 192.8,
+    "z": -348.7,
+    "ground_elev_m": 69.1,
+    "walk_surface_elev_m": 69.1,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 780.0,
+    "lat": 35.0016337,
+    "lon": 135.7815649,
+    "x": 211.4,
+    "z": -341.4,
+    "ground_elev_m": 70.6,
+    "walk_surface_elev_m": 70.6,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 800.0,
+    "lat": 35.0015681,
+    "lon": 135.7817693,
+    "x": 230.1,
+    "z": -334.1,
+    "ground_elev_m": 69.7,
+    "walk_surface_elev_m": 69.7,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 820.0,
+    "lat": 35.0015025,
+    "lon": 135.7819737,
+    "x": 248.8,
+    "z": -326.8,
+    "ground_elev_m": 69.8,
+    "walk_surface_elev_m": 69.8,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 840.0,
+    "lat": 35.0014369,
+    "lon": 135.7821782,
+    "x": 267.4,
+    "z": -319.6,
+    "ground_elev_m": 72.0,
+    "walk_surface_elev_m": 72.0,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 860.0,
+    "lat": 35.0013713,
+    "lon": 135.7823826,
+    "x": 286.1,
+    "z": -312.3,
+    "ground_elev_m": 72.4,
+    "walk_surface_elev_m": 72.4,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 880.0,
+    "lat": 35.0013896,
+    "lon": 135.7824225,
+    "x": 289.7,
+    "z": -314.3,
+    "ground_elev_m": 72.5,
+    "walk_surface_elev_m": 72.5,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 900.0,
+    "lat": 35.0015109,
+    "lon": 135.7822605,
+    "x": 274.9,
+    "z": -327.8,
+    "ground_elev_m": 74.9,
+    "walk_surface_elev_m": 74.9,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 920.0,
+    "lat": 35.0016359,
+    "lon": 135.7821046,
+    "x": 260.7,
+    "z": -341.6,
+    "ground_elev_m": 71.8,
+    "walk_surface_elev_m": 71.8,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 940.0,
+    "lat": 35.0017756,
+    "lon": 135.7819791,
+    "x": 249.2,
+    "z": -357.1,
+    "ground_elev_m": 72.2,
+    "walk_surface_elev_m": 72.2,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 960.0,
+    "lat": 35.001823,
+    "lon": 135.7817691,
+    "x": 230.1,
+    "z": -362.4,
+    "ground_elev_m": 71.9,
+    "walk_surface_elev_m": 71.9,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 980.0,
+    "lat": 35.001891,
+    "lon": 135.7815674,
+    "x": 211.7,
+    "z": -369.9,
+    "ground_elev_m": 71.1,
+    "walk_surface_elev_m": 71.1,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 1000.0,
+    "lat": 35.0019087,
+    "lon": 135.7813488,
+    "x": 191.7,
+    "z": -371.9,
+    "ground_elev_m": 70.3,
+    "walk_surface_elev_m": 70.3,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 1020.0,
+    "lat": 35.0019195,
+    "lon": 135.7811297,
+    "x": 171.7,
+    "z": -373.1,
+    "ground_elev_m": 69.2,
+    "walk_surface_elev_m": 69.2,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 1040.0,
+    "lat": 35.0019266,
+    "lon": 135.7809103,
+    "x": 151.7,
+    "z": -373.9,
+    "ground_elev_m": 67.4,
+    "walk_surface_elev_m": 67.4,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 1060.0,
+    "lat": 35.0019338,
+    "lon": 135.7806909,
+    "x": 131.6,
+    "z": -374.7,
+    "ground_elev_m": 65.4,
+    "walk_surface_elev_m": 65.4,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 1080.0,
+    "lat": 35.0018927,
+    "lon": 135.7804958,
+    "x": 113.8,
+    "z": -370.1,
+    "ground_elev_m": 64.0,
+    "walk_surface_elev_m": 64.0,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 1100.0,
+    "lat": 35.0018985,
+    "lon": 135.7802764,
+    "x": 93.8,
+    "z": -370.8,
+    "ground_elev_m": 62.8,
+    "walk_surface_elev_m": 62.8,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 1120.0,
+    "lat": 35.0019043,
+    "lon": 135.7800569,
+    "x": 73.8,
+    "z": -371.4,
+    "ground_elev_m": 61.5,
+    "walk_surface_elev_m": 61.5,
+    "leg": "link west to Nene north end",
+    "note": ""
+   },
+   {
+    "cum_m": 1140.0,
+    "lat": 35.0017681,
+    "lon": 135.7799769,
+    "x": 66.5,
+    "z": -356.3,
+    "ground_elev_m": 60.9,
+    "walk_surface_elev_m": 60.9,
+    "leg": "Nene-no-michi (N->S)",
+    "note": ""
+   },
+   {
+    "cum_m": 1160.0,
+    "lat": 35.0015884,
+    "lon": 135.7799674,
+    "x": 65.6,
+    "z": -336.4,
+    "ground_elev_m": 60.6,
+    "walk_surface_elev_m": 60.6,
+    "leg": "Nene-no-michi (N->S)",
+    "note": ""
+   },
+   {
+    "cum_m": 1180.0,
+    "lat": 35.0014087,
+    "lon": 135.7799579,
+    "x": 64.7,
+    "z": -316.4,
+    "ground_elev_m": 61.2,
+    "walk_surface_elev_m": 61.2,
+    "leg": "Nene-no-michi (N->S)",
+    "note": ""
+   },
+   {
+    "cum_m": 1200.0,
+    "lat": 35.001229,
+    "lon": 135.7799484,
+    "x": 63.9,
+    "z": -296.5,
+    "ground_elev_m": 60.3,
+    "walk_surface_elev_m": 60.3,
+    "leg": "Nene-no-michi (N->S)",
+    "note": ""
+   },
+   {
+    "cum_m": 1220.0,
+    "lat": 35.0010494,
+    "lon": 135.7799388,
+    "x": 63.0,
+    "z": -276.6,
+    "ground_elev_m": 59.7,
+    "walk_surface_elev_m": 59.7,
+    "leg": "Nene-no-michi (N->S)",
+    "note": ""
+   },
+   {
+    "cum_m": 1240.0,
+    "lat": 35.0008697,
+    "lon": 135.7799293,
+    "x": 62.1,
+    "z": -256.6,
+    "ground_elev_m": 59.1,
+    "walk_surface_elev_m": 59.1,
+    "leg": "Nene-no-michi (N->S)",
+    "note": ""
+   },
+   {
+    "cum_m": 1260.0,
+    "lat": 35.00069,
+    "lon": 135.7799198,
+    "x": 61.3,
+    "z": -236.7,
+    "ground_elev_m": 58.1,
+    "walk_surface_elev_m": 58.1,
+    "leg": "Nene-no-michi (N->S)",
+    "note": ""
+   },
+   {
+    "cum_m": 1280.0,
+    "lat": 35.0005103,
+    "lon": 135.7799103,
+    "x": 60.4,
+    "z": -216.8,
+    "ground_elev_m": 57.3,
+    "walk_surface_elev_m": 57.3,
+    "leg": "Nene-no-michi (N->S)",
+    "note": ""
+   },
+   {
+    "cum_m": 1300.0,
+    "lat": 35.0003306,
+    "lon": 135.7799007,
+    "x": 59.5,
+    "z": -196.8,
+    "ground_elev_m": 56.8,
+    "walk_surface_elev_m": 56.8,
+    "leg": "Nene-no-michi (N->S)",
+    "note": ""
+   },
+   {
+    "cum_m": 1320.0,
+    "lat": 35.0001509,
+    "lon": 135.7798912,
+    "x": 58.6,
+    "z": -176.9,
+    "ground_elev_m": 56.6,
+    "walk_surface_elev_m": 56.6,
+    "leg": "Nene-no-michi (N->S)",
+    "note": ""
+   },
+   {
+    "cum_m": 1340.0,
+    "lat": 34.9999712,
+    "lon": 135.7798817,
+    "x": 57.8,
+    "z": -157.0,
+    "ground_elev_m": 56.5,
+    "walk_surface_elev_m": 56.5,
+    "leg": "Nene-no-michi (N->S)",
+    "note": ""
+   },
+   {
+    "cum_m": 1360.0,
+    "lat": 34.9997915,
+    "lon": 135.7798721,
+    "x": 56.9,
+    "z": -137.0,
+    "ground_elev_m": 56.6,
+    "walk_surface_elev_m": 56.6,
+    "leg": "Nene-no-michi (N->S)",
+    "note": ""
+   },
+   {
+    "cum_m": 1380.0,
+    "lat": 34.9996118,
+    "lon": 135.7798626,
+    "x": 56.0,
+    "z": -117.1,
+    "ground_elev_m": 56.9,
+    "walk_surface_elev_m": 56.9,
+    "leg": "Nene-no-michi (N->S)",
+    "note": ""
+   },
+   {
+    "cum_m": 1400.0,
+    "lat": 34.9994321,
+    "lon": 135.7798531,
+    "x": 55.2,
+    "z": -97.2,
+    "ground_elev_m": 57.7,
+    "walk_surface_elev_m": 57.7,
+    "leg": "Nene-no-michi (N->S)",
+    "note": ""
+   },
+   {
+    "cum_m": 1420.0,
+    "lat": 34.9992642,
+    "lon": 135.7798585,
+    "x": 55.7,
+    "z": -78.5,
+    "ground_elev_m": 59.5,
+    "walk_surface_elev_m": 59.5,
+    "leg": "Nene south end -> Ninenzaka north end",
+    "note": ""
+   },
+   {
+    "cum_m": 1440.0,
+    "lat": 34.9992652,
+    "lon": 135.7800781,
+    "x": 75.7,
+    "z": -78.6,
+    "ground_elev_m": 60.0,
+    "walk_surface_elev_m": 60.0,
+    "leg": "Nene south end -> Ninenzaka north end",
+    "note": ""
+   },
+   {
+    "cum_m": 1460.0,
+    "lat": 34.9992662,
+    "lon": 135.7802976,
+    "x": 95.7,
+    "z": -78.7,
+    "ground_elev_m": 61.0,
+    "walk_surface_elev_m": 61.0,
+    "leg": "Nene south end -> Ninenzaka north end",
+    "note": ""
+   },
+   {
+    "cum_m": 1480.0,
+    "lat": 34.9992672,
+    "lon": 135.7805172,
+    "x": 115.8,
+    "z": -78.9,
+    "ground_elev_m": 62.1,
+    "walk_surface_elev_m": 62.1,
+    "leg": "Nene south end -> Ninenzaka north end",
+    "note": ""
+   },
+   {
+    "cum_m": 1500.0,
+    "lat": 34.9992412,
+    "lon": 135.7807059,
+    "x": 133.0,
+    "z": -76.0,
+    "ground_elev_m": 63.3,
+    "walk_surface_elev_m": 63.3,
+    "leg": "Ninenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1520.0,
+    "lat": 34.9990616,
+    "lon": 135.780718,
+    "x": 134.1,
+    "z": -56.0,
+    "ground_elev_m": 61.7,
+    "walk_surface_elev_m": 61.7,
+    "leg": "Ninenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1540.0,
+    "lat": 34.9988899,
+    "lon": 135.7807835,
+    "x": 140.1,
+    "z": -37.0,
+    "ground_elev_m": 61.9,
+    "walk_surface_elev_m": 61.9,
+    "leg": "Ninenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1560.0,
+    "lat": 34.9987127,
+    "lon": 135.7808187,
+    "x": 143.3,
+    "z": -17.3,
+    "ground_elev_m": 62.5,
+    "walk_surface_elev_m": 62.5,
+    "leg": "Ninenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1580.0,
+    "lat": 34.9985334,
+    "lon": 135.7808342,
+    "x": 144.7,
+    "z": 2.6,
+    "ground_elev_m": 62.9,
+    "walk_surface_elev_m": 62.9,
+    "leg": "Ninenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1600.0,
+    "lat": 34.9983537,
+    "lon": 135.7808448,
+    "x": 145.7,
+    "z": 22.5,
+    "ground_elev_m": 63.5,
+    "walk_surface_elev_m": 63.5,
+    "leg": "Ninenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1620.0,
+    "lat": 34.9981739,
+    "lon": 135.7808517,
+    "x": 146.3,
+    "z": 42.4,
+    "ground_elev_m": 65.7,
+    "walk_surface_elev_m": 65.7,
+    "leg": "Ninenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1640.0,
+    "lat": 34.997999,
+    "lon": 135.780805,
+    "x": 142.1,
+    "z": 61.8,
+    "ground_elev_m": 69.7,
+    "walk_surface_elev_m": 69.7,
+    "leg": "Ninenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1660.0,
+    "lat": 34.9978871,
+    "lon": 135.7809742,
+    "x": 157.5,
+    "z": 74.3,
+    "ground_elev_m": 71.2,
+    "walk_surface_elev_m": 71.2,
+    "leg": "Sannenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1680.0,
+    "lat": 34.9977222,
+    "lon": 135.7810511,
+    "x": 164.5,
+    "z": 92.5,
+    "ground_elev_m": 72.8,
+    "walk_surface_elev_m": 72.8,
+    "leg": "Sannenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1700.0,
+    "lat": 34.9975426,
+    "lon": 135.7810617,
+    "x": 165.5,
+    "z": 112.5,
+    "ground_elev_m": 73.1,
+    "walk_surface_elev_m": 73.1,
+    "leg": "Sannenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1720.0,
+    "lat": 34.997363,
+    "lon": 135.7810548,
+    "x": 164.9,
+    "z": 132.4,
+    "ground_elev_m": 72.9,
+    "walk_surface_elev_m": 72.9,
+    "leg": "Sannenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1740.0,
+    "lat": 34.9971833,
+    "lon": 135.7810432,
+    "x": 163.8,
+    "z": 152.3,
+    "ground_elev_m": 72.5,
+    "walk_surface_elev_m": 72.5,
+    "leg": "Sannenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1760.0,
+    "lat": 34.9970037,
+    "lon": 135.7810317,
+    "x": 162.8,
+    "z": 172.3,
+    "ground_elev_m": 71.6,
+    "walk_surface_elev_m": 71.6,
+    "leg": "Sannenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1780.0,
+    "lat": 34.996824,
+    "lon": 135.7810255,
+    "x": 162.2,
+    "z": 192.2,
+    "ground_elev_m": 70.5,
+    "walk_surface_elev_m": 70.5,
+    "leg": "Sannenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1800.0,
+    "lat": 34.9966449,
+    "lon": 135.7810141,
+    "x": 161.2,
+    "z": 212.1,
+    "ground_elev_m": 70.5,
+    "walk_surface_elev_m": 70.5,
+    "leg": "Sannenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1820.0,
+    "lat": 34.9964742,
+    "lon": 135.7809447,
+    "x": 154.8,
+    "z": 231.0,
+    "ground_elev_m": 75.4,
+    "walk_surface_elev_m": 75.4,
+    "leg": "Sannenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1840.0,
+    "lat": 34.996308,
+    "lon": 135.7808608,
+    "x": 147.2,
+    "z": 249.4,
+    "ground_elev_m": 80.4,
+    "walk_surface_elev_m": 80.4,
+    "leg": "Sannenzaka",
+    "note": ""
+   },
+   {
+    "cum_m": 1860.0,
+    "lat": 34.9961631,
+    "lon": 135.7808334,
+    "x": 144.7,
+    "z": 265.5,
+    "ground_elev_m": 81.7,
+    "walk_surface_elev_m": 81.7,
+    "leg": "Kiyomizu-zaka (upper)",
+    "note": ""
+   },
+   {
+    "cum_m": 1880.0,
+    "lat": 34.9960923,
+    "lon": 135.7810352,
+    "x": 163.1,
+    "z": 273.4,
+    "ground_elev_m": 83.3,
+    "walk_surface_elev_m": 83.3,
+    "leg": "Kiyomizu-zaka (upper)",
+    "note": ""
+   },
+   {
+    "cum_m": 1900.0,
+    "lat": 34.9960213,
+    "lon": 135.781237,
+    "x": 181.5,
+    "z": 281.2,
+    "ground_elev_m": 84.9,
+    "walk_surface_elev_m": 84.9,
+    "leg": "Kiyomizu-zaka (upper)",
+    "note": ""
+   },
+   {
+    "cum_m": 1920.0,
+    "lat": 34.9959309,
+    "lon": 135.7814266,
+    "x": 198.8,
+    "z": 291.3,
+    "ground_elev_m": 86.3,
+    "walk_surface_elev_m": 86.3,
+    "leg": "Kiyomizu-zaka (upper)",
+    "note": ""
+   },
+   {
+    "cum_m": 1940.0,
+    "lat": 34.9958356,
+    "lon": 135.7816128,
+    "x": 215.8,
+    "z": 301.8,
+    "ground_elev_m": 87.5,
+    "walk_surface_elev_m": 87.5,
+    "leg": "Kiyomizu-zaka (upper)",
+    "note": ""
+   },
+   {
+    "cum_m": 1960.0,
+    "lat": 34.9957398,
+    "lon": 135.7817986,
+    "x": 232.8,
+    "z": 312.5,
+    "ground_elev_m": 88.8,
+    "walk_surface_elev_m": 88.8,
+    "leg": "Kiyomizu-zaka (upper)",
+    "note": ""
+   },
+   {
+    "cum_m": 1980.0,
+    "lat": 34.9956244,
+    "lon": 135.7819662,
+    "x": 248.1,
+    "z": 325.3,
+    "ground_elev_m": 90.9,
+    "walk_surface_elev_m": 90.9,
+    "leg": "Kiyomizu-zaka (upper)",
+    "note": ""
+   },
+   {
+    "cum_m": 2000.0,
+    "lat": 34.9955275,
+    "lon": 135.7821491,
+    "x": 264.8,
+    "z": 336.0,
+    "ground_elev_m": 92.6,
+    "walk_surface_elev_m": 92.6,
+    "leg": "Kiyomizu-zaka (upper)",
+    "note": ""
+   },
+   {
+    "cum_m": 2020.0,
+    "lat": 34.9955024,
+    "lon": 135.7823648,
+    "x": 284.5,
+    "z": 338.8,
+    "ground_elev_m": 94.4,
+    "walk_surface_elev_m": 94.4,
+    "leg": "Kiyomizu-zaka (upper)",
+    "note": ""
+   },
+   {
+    "cum_m": 2040.0,
+    "lat": 34.9955068,
+    "lon": 135.7825843,
+    "x": 304.5,
+    "z": 338.3,
+    "ground_elev_m": 96.0,
+    "walk_surface_elev_m": 96.0,
+    "leg": "Kiyomizu-zaka (upper)",
+    "note": ""
+   },
+   {
+    "cum_m": 2060.0,
+    "lat": 34.9955111,
+    "lon": 135.7828038,
+    "x": 324.5,
+    "z": 337.8,
+    "ground_elev_m": 97.3,
+    "walk_surface_elev_m": 97.3,
+    "leg": "Kiyomizu-zaka (upper)",
+    "note": ""
+   },
+   {
+    "cum_m": 2080.0,
+    "lat": 34.9954925,
+    "lon": 135.7830202,
+    "x": 344.3,
+    "z": 339.9,
+    "ground_elev_m": 98.9,
+    "walk_surface_elev_m": 98.9,
+    "leg": "Kiyomizu-zaka top -> Niomon",
+    "note": ""
+   },
+   {
+    "cum_m": 2100.0,
+    "lat": 34.9954494,
+    "lon": 135.7832334,
+    "x": 363.8,
+    "z": 344.7,
+    "ground_elev_m": 101.1,
+    "walk_surface_elev_m": 101.1,
+    "leg": "Kiyomizu-zaka top -> Niomon",
+    "note": ""
+   },
+   {
+    "cum_m": 2120.0,
+    "lat": 34.9953568,
+    "lon": 135.7834076,
+    "x": 379.7,
+    "z": 355.0,
+    "ground_elev_m": 104.5,
+    "walk_surface_elev_m": 104.5,
+    "leg": "Niomon -> Hondo/Butai",
+    "note": ""
+   },
+   {
+    "cum_m": 2140.0,
+    "lat": 34.9952155,
+    "lon": 135.7835436,
+    "x": 392.1,
+    "z": 370.6,
+    "ground_elev_m": 107.1,
+    "walk_surface_elev_m": 107.1,
+    "leg": "Niomon -> Hondo/Butai",
+    "note": ""
+   },
+   {
+    "cum_m": 2160.0,
+    "lat": 34.9951044,
+    "lon": 135.7837067,
+    "x": 407.0,
+    "z": 383.0,
+    "ground_elev_m": 111.9,
+    "walk_surface_elev_m": 111.9,
+    "leg": "Niomon -> Hondo/Butai",
+    "note": ""
+   },
+   {
+    "cum_m": 2180.0,
+    "lat": 34.9950447,
+    "lon": 135.7839136,
+    "x": 425.8,
+    "z": 389.6,
+    "ground_elev_m": 112.2,
+    "walk_surface_elev_m": 112.2,
+    "leg": "Niomon -> Hondo/Butai",
+    "note": ""
+   },
+   {
+    "cum_m": 2200.0,
+    "lat": 34.9949944,
+    "lon": 135.7841244,
+    "x": 445.1,
+    "z": 395.2,
+    "ground_elev_m": 113.2,
+    "walk_surface_elev_m": 113.2,
+    "leg": "Niomon -> Hondo/Butai",
+    "note": ""
+   },
+   {
+    "cum_m": 2220.0,
+    "lat": 34.9949401,
+    "lon": 135.7843316,
+    "x": 464.0,
+    "z": 401.2,
+    "ground_elev_m": 113.9,
+    "walk_surface_elev_m": 113.9,
+    "leg": "Niomon -> Hondo/Butai",
+    "note": ""
+   },
+   {
+    "cum_m": 2240.0,
+    "lat": 34.9947879,
+    "lon": 135.7844486,
+    "x": 474.7,
+    "z": 418.1,
+    "ground_elev_m": 115.0,
+    "walk_surface_elev_m": 115.0,
+    "leg": "Niomon -> Hondo/Butai",
+    "note": ""
+   },
+   {
+    "cum_m": 2260.0,
+    "lat": 34.9947936,
+    "lon": 135.7846565,
+    "x": 493.7,
+    "z": 417.4,
+    "ground_elev_m": 114.9,
+    "walk_surface_elev_m": 114.9,
+    "leg": "Niomon -> Hondo/Butai",
+    "note": ""
+   },
+   {
+    "cum_m": 2280.0,
+    "lat": 34.9948165,
+    "lon": 135.7848743,
+    "x": 513.6,
+    "z": 414.9,
+    "ground_elev_m": 115.4,
+    "walk_surface_elev_m": 115.4,
+    "leg": "Niomon -> Hondo/Butai",
+    "note": ""
+   },
+   {
+    "cum_m": 2300.0,
+    "lat": 34.9947418,
+    "lon": 135.7850122,
+    "x": 526.1,
+    "z": 423.2,
+    "ground_elev_m": 115.4,
+    "walk_surface_elev_m": 115.4,
+    "leg": "Niomon -> Hondo/Butai",
+    "note": ""
+   },
+   {
+    "cum_m": 2308.7,
+    "lat": 34.994666,
+    "lon": 135.785037,
+    "x": 528.4,
+    "z": 431.6,
+    "ground_elev_m": 102.8,
+    "walk_surface_elev_m": 115.5,
+    "leg": "Niomon -> Hondo/Butai",
+    "note": "stage FLOOR (deck); bare ground below is 102.8 m"
+   }
+  ]
+ },
+ "pagoda_sightlines": [
+  {
+   "viewpoint": "Yasaka-dori at Higashioji (west end)",
+   "lat": 34.998705,
+   "lon": 135.77719,
+   "x": -187.9,
+   "z": -16.5,
+   "ground_elev_m": 50.6,
+   "eye_elev_m": 52.2,
+   "dist_to_pagoda_base_m": 188.3,
+   "camera_bearing_deg": 95.0,
+   "elev_angle_to_top_deg": 16.3,
+   "elev_angle_to_base_deg": 2.8,
+   "confidence": "HIGH"
+  },
+  {
+   "viewpoint": "Yasaka-dori, 150 m west of pagoda",
+   "lat": 34.998625,
+   "lon": 135.777985,
+   "x": -115.4,
+   "z": -7.6,
+   "ground_elev_m": 52.4,
+   "eye_elev_m": 54.0,
+   "dist_to_pagoda_base_m": 115.4,
+   "camera_bearing_deg": 93.8,
+   "elev_angle_to_top_deg": 24.8,
+   "elev_angle_to_base_deg": 3.6,
+   "confidence": "HIGH"
+  },
+  {
+   "viewpoint": "Yasaka-dori, 100 m west of pagoda",
+   "lat": 34.998598,
+   "lon": 135.778277,
+   "x": -88.7,
+   "z": -4.6,
+   "ground_elev_m": 53.0,
+   "eye_elev_m": 54.6,
+   "dist_to_pagoda_base_m": 88.6,
+   "camera_bearing_deg": 93.0,
+   "elev_angle_to_top_deg": 30.7,
+   "elev_angle_to_base_deg": 4.3,
+   "confidence": "HIGH"
+  },
+  {
+   "viewpoint": "Yasaka-dori x Shimogawara-dori (classic frame)",
+   "lat": 34.998563,
+   "lon": 135.778771,
+   "x": -43.6,
+   "z": -0.7,
+   "ground_elev_m": 57.8,
+   "eye_elev_m": 59.4,
+   "dist_to_pagoda_base_m": 43.5,
+   "camera_bearing_deg": 91.0,
+   "elev_angle_to_top_deg": 47.7,
+   "elev_angle_to_base_deg": 2.5,
+   "confidence": "HIGH"
+  },
+  {
+   "viewpoint": "Yasaka-dori, 60 m west of pagoda",
+   "lat": 34.998577,
+   "lon": 135.778541,
+   "x": -64.6,
+   "z": -2.3,
+   "ground_elev_m": 55.2,
+   "eye_elev_m": 56.8,
+   "dist_to_pagoda_base_m": 64.5,
+   "camera_bearing_deg": 92.0,
+   "elev_angle_to_top_deg": 38.1,
+   "elev_angle_to_base_deg": 4.0,
+   "confidence": "HIGH"
+  },
+  {
+   "viewpoint": "Pagoda->Sannenzaka connector, looking back WNW",
+   "lat": 34.9983,
+   "lon": 135.779825,
+   "x": 52.6,
+   "z": 28.4,
+   "ground_elev_m": 62.4,
+   "eye_elev_m": 64.0,
+   "dist_to_pagoda_base_m": 59.7,
+   "camera_bearing_deg": 298.5,
+   "elev_angle_to_top_deg": 35.9,
+   "elev_angle_to_base_deg": -2.6,
+   "confidence": "HIGH"
+  },
+  {
+   "viewpoint": "Nene-no-michi south end, looking SW",
+   "lat": 34.999264,
+   "lon": 135.779844,
+   "x": 54.3,
+   "z": -78.5,
+   "ground_elev_m": 59.5,
+   "eye_elev_m": 61.1,
+   "dist_to_pagoda_base_m": 95.6,
+   "camera_bearing_deg": 214.6,
+   "elev_angle_to_top_deg": 25.8,
+   "elev_angle_to_base_deg": 0.1,
+   "confidence": "MED"
+  },
+  {
+   "viewpoint": "Ninenzaka north end, looking WSW",
+   "lat": 34.999268,
+   "lon": 135.780704,
+   "x": 132.8,
+   "z": -78.9,
+   "ground_elev_m": 63.3,
+   "eye_elev_m": 64.9,
+   "dist_to_pagoda_base_m": 154.4,
+   "camera_bearing_deg": 239.2,
+   "elev_angle_to_top_deg": 15.4,
+   "elev_angle_to_base_deg": -1.3,
+   "confidence": "MED"
+  },
+  {
+   "viewpoint": "Sannenzaka/Ninenzaka junction, looking WNW",
+   "lat": 34.997998,
+   "lon": 135.780804,
+   "x": 142.0,
+   "z": 61.9,
+   "ground_elev_m": 69.7,
+   "eye_elev_m": 71.3,
+   "dist_to_pagoda_base_m": 154.7,
+   "camera_bearing_deg": 293.7,
+   "elev_angle_to_top_deg": 13.1,
+   "elev_angle_to_base_deg": -3.7,
+   "confidence": "MED"
+  }
+ ],
+ "overlook_from_stage": {
+  "observer": {
+   "name": "Kiyomizu-dera stage (butai) deck",
+   "lat": 34.994666,
+   "lon": 135.785037,
+   "deck_elev_m": 115.5,
+   "eye_elev_m": 117.1,
+   "note": "Deck level equals the Hondo terrace (GSI DEM reads 115.4-115.7 m across the terrace). Bare ground directly beneath the stage is 102.8 m."
+  },
+  "view_arc": "Open arc runs roughly from bearing 180 deg (Koyasu pagoda, S) round through 250 deg (Kyoto Tower, WSW) to about 330 deg (NNW). The city basin lies W to WSW; the Higashiyama ridge closes the view behind (E).",
+  "targets": [
+   {
+    "target": "Kyoto Tower (top)",
+    "lat": 34.987536,
+    "lon": 135.759339,
+    "ground_elev_m": 28.4,
+    "structure_h_m": 131.0,
+    "top_elev_m": 159.4,
+    "dist_m": 2471.6,
+    "dist_km": 2.47,
+    "bearing_from_stage_deg": 251.3,
+    "elev_angle_deg": 0.98,
+    "confidence": "MED - tower height 131 m from spec"
+   },
+   {
+    "target": "Kyoto Station",
+    "lat": 34.9853,
+    "lon": 135.75855,
+    "ground_elev_m": 27.6,
+    "structure_h_m": 0,
+    "top_elev_m": 27.6,
+    "dist_m": 2628.0,
+    "dist_km": 2.63,
+    "bearing_from_stage_deg": 246.7,
+    "elev_angle_deg": -1.95,
+    "confidence": "HIGH"
+   },
+   {
+    "target": "To-ji five-storey pagoda (top)",
+    "lat": 34.98083,
+    "lon": 135.74772,
+    "ground_elev_m": 23.4,
+    "structure_h_m": 54.8,
+    "top_elev_m": 78.2,
+    "dist_m": 3731.5,
+    "dist_km": 3.73,
+    "bearing_from_stage_deg": 245.7,
+    "elev_angle_deg": -0.6,
+    "confidence": "MED - 54.8 m pagoda"
+   },
+   {
+    "target": "Kyoto Imperial Palace",
+    "lat": 35.0254,
+    "lon": 135.7621,
+    "ground_elev_m": 51.6,
+    "structure_h_m": 0,
+    "top_elev_m": 51.6,
+    "dist_m": 4005.4,
+    "dist_km": 4.01,
+    "bearing_from_stage_deg": 328.6,
+    "elev_angle_deg": -0.94,
+    "confidence": "HIGH"
+   },
+   {
+    "target": "Arashiyama / Togetsukyo bridge",
+    "lat": 35.0131,
+    "lon": 135.6777,
+    "ground_elev_m": 32.4,
+    "structure_h_m": 0,
+    "top_elev_m": 32.4,
+    "dist_m": 9989.0,
+    "dist_km": 9.99,
+    "bearing_from_stage_deg": 281.9,
+    "elev_angle_deg": -0.49,
+    "confidence": "HIGH"
+   },
+   {
+    "target": "Nishiyama ridge (due west sample)",
+    "lat": 34.995,
+    "lon": 135.66,
+    "ground_elev_m": 318.1,
+    "structure_h_m": 0,
+    "top_elev_m": 318.1,
+    "dist_m": 11389.9,
+    "dist_km": 11.39,
+    "bearing_from_stage_deg": 270.2,
+    "elev_angle_deg": 1.01,
+    "confidence": "MED - sampled ridge point, not a named summit"
+   },
+   {
+    "target": "Mt Atago (NW skyline)",
+    "lat": 35.0637,
+    "lon": 135.6337,
+    "ground_elev_m": 867.2,
+    "structure_h_m": 0,
+    "top_elev_m": 867.2,
+    "dist_m": 15773.6,
+    "dist_km": 15.77,
+    "bearing_from_stage_deg": 299.2,
+    "elev_angle_deg": 2.72,
+    "confidence": "LOW - sample point is below the 924 m summit"
+   },
+   {
+    "target": "Higashiyama/Daimonji flank (N sample)",
+    "lat": 35.02556,
+    "lon": 135.80139,
+    "ground_elev_m": 209.5,
+    "structure_h_m": 0,
+    "top_elev_m": 209.5,
+    "dist_m": 3744.2,
+    "dist_km": 3.74,
+    "bearing_from_stage_deg": 23.4,
+    "elev_angle_deg": 1.41,
+    "confidence": "LOW - not the 466 m summit"
+   },
+   {
+    "target": "Koyasu-no-to pagoda (across the ravine)",
+    "lat": 34.992925,
+    "lon": 135.784958,
+    "ground_elev_m": 116.6,
+    "structure_h_m": 15.0,
+    "top_elev_m": 131.6,
+    "dist_m": 193.7,
+    "dist_km": 0.19,
+    "bearing_from_stage_deg": 182.1,
+    "elev_angle_deg": 4.28,
+    "confidence": "HIGH"
+   }
+  ]
+ },
+ "yasaka_shrine_layout": {
+  "precinct": {
+   "osm_way": 328903218,
+   "bbox_ns_m": 160.1,
+   "bbox_ew_m": 194.2,
+   "centre": {
+    "lat": 35.003445,
+    "lon": 135.778228
+   },
+   "confidence": "HIGH",
+   "note": "Roughly rectangular, long axis E-W. Ground rises west-to-east across the precinct from 44.3 m at the West Romon to ~50 m at the Honden."
+  },
+  "structures": [
+   {
+    "name_en": "West Romon",
+    "name_ja": "西楼門",
+    "lat": 35.003741,
+    "lon": 135.777526,
+    "x": -157.3,
+    "z": -575.2,
+    "elev_m": 44.3,
+    "footprint_m": [
+     12.6,
+     10.2
+    ],
+    "faces_deg": 270,
+    "confidence": "HIGH",
+    "note": "Vermilion two-storey gate at the east end of Shijo-dori; faces WEST down Shijo. Rebuilt 1497."
+   },
+   {
+    "name_en": "Maiden (dance pavilion)",
+    "name_ja": "舞殿",
+    "lat": 35.003392,
+    "lon": 135.778538,
+    "x": -64.9,
+    "z": -536.5,
+    "elev_m": 49.7,
+    "footprint_m": [
+     13.25,
+     11.88
+    ],
+    "long_axis_bearing_deg": 94.6,
+    "confidence": "HIGH",
+    "note": "Open-sided lantern-hung pavilion in the centre of the precinct. Rebuilt 1903."
+   },
+   {
+    "name_en": "Honden (main hall)",
+    "name_ja": "本殿",
+    "lat": 35.003645,
+    "lon": 135.77859,
+    "x": -60.1,
+    "z": -564.5,
+    "elev_m": 49.5,
+    "footprint_m": [
+     35.1,
+     29.4
+    ],
+    "faces_deg": 180,
+    "confidence": "HIGH",
+    "note": "Gion-zukuri: worship hall and inner sanctum under ONE roof. National Treasure (2020). Faces SOUTH toward the Maiden."
+   },
+   {
+    "name_en": "South Romon",
+    "name_ja": "南楼門",
+    "lat": 35.003089,
+    "lon": 135.778534,
+    "x": -65.3,
+    "z": -502.8,
+    "elev_m": 50.8,
+    "footprint_m": [
+     19.8,
+     14.3
+    ],
+    "faces_deg": 180,
+    "confidence": "HIGH",
+    "note": "The formal main entrance. Faces SOUTH onto Shimogawara-dori. Rebuilt 1879."
+   },
+   {
+    "name_en": "Stone torii",
+    "name_ja": "石鳥居",
+    "lat": 35.002769,
+    "lon": 135.778501,
+    "x": -68.3,
+    "z": -467.3,
+    "elev_m": 51.2,
+    "span_m": 13.5,
+    "height_m_est": 9.5,
+    "faces_deg": 180,
+    "confidence": "HIGH position / MED height",
+    "note": "Built 1646, on Shimogawara-dori ~36 m south of the South Romon. Height not verified."
+   }
+  ],
+  "relative_offsets_m": {
+   "west_romon_to_maiden": {
+    "east": 92.4,
+    "north": -38.7,
+    "dist": 100.2,
+    "bearing_deg": 112.7
+   },
+   "maiden_to_honden": {
+    "east": 4.8,
+    "north": 28.0,
+    "dist": 28.4,
+    "bearing_deg": 9.7
+   },
+   "maiden_to_south_romon": {
+    "east": -0.4,
+    "north": -33.7,
+    "dist": 33.7,
+    "bearing_deg": 180.7
+   },
+   "south_romon_to_stone_torii": {
+    "east": -3.0,
+    "north": -35.5,
+    "dist": 35.6,
+    "bearing_deg": 184.8
+   },
+   "axis_note": "Honden - Maiden - South Romon - stone torii form a near-straight NORTH-SOUTH ceremonial axis (bearings within 5 deg of 180). The West Romon is OFF this axis, 92 m west and 39 m north of the Maiden, serving Shijo-dori. This is the key layout fact: the famous vermilion gate is a SIDE entrance, not the axial one."
+  }
+ },
+ "kiyomizudera_layout": {
+  "approach_axis": "Niomon -> Saimon -> three-storey pagoda -> Todoroki-mon -> Hondo runs roughly WNW to ESE, climbing 104.5 m to 115.5 m over ~200 m.",
+  "structures": [
+   {
+    "name_en": "Niomon (Deva gate)",
+    "name_ja": "仁王門",
+    "lat": 34.995428,
+    "lon": 135.783339,
+    "x": 373.4,
+    "z": 347.1,
+    "elev_m": 104.5,
+    "footprint_m": [
+     11.76,
+     7.9
+    ],
+    "height_m": 14.0,
+    "confidence": "HIGH position, MED height (OSM tag only)"
+   },
+   {
+    "name_en": "Saimon (west gate)",
+    "name_ja": "西門",
+    "lat": 34.995144,
+    "lon": 135.783606,
+    "x": 397.8,
+    "z": 378.6,
+    "elev_m": 111.8,
+    "footprint_m": [
+     15.7,
+     15.4
+    ],
+    "confidence": "HIGH"
+   },
+   {
+    "name_en": "Three-storey pagoda",
+    "name_ja": "三重塔",
+    "lat": 34.995063,
+    "lon": 135.783837,
+    "x": 418.9,
+    "z": 387.6,
+    "elev_m": 112.2,
+    "footprint_m": [
+     13.2,
+     12.9
+    ],
+    "height_m": 31.0,
+    "confidence": "HIGH position; height 約31 m from ja.wikipedia"
+   },
+   {
+    "name_en": "Todoroki-mon (middle gate)",
+    "name_ja": "轟門",
+    "lat": 34.994773,
+    "lon": 135.78446,
+    "x": 475.7,
+    "z": 419.7,
+    "elev_m": 114.9,
+    "footprint_m": [
+     10.2,
+     8.67
+    ],
+    "confidence": "HIGH"
+   },
+   {
+    "name_en": "Hondo (main hall)",
+    "name_ja": "本堂",
+    "lat": 34.994783,
+    "lon": 135.784944,
+    "x": 519.9,
+    "z": 418.6,
+    "elev_m": 115.5,
+    "footprint_m": [
+     36.0,
+     31.0
+    ],
+    "footprint_osm_bbox_m": [
+     46.3,
+     41.7
+    ],
+    "confidence": "HIGH position; 36 x 31 m frontage/depth from ja.wikipedia (間口36m 奥行31m)",
+    "note": "OSM bbox is larger than the quoted hall because it wraps the eaves and attached wings."
+   },
+   {
+    "name_en": "Butai (the stage)",
+    "name_ja": "舞台",
+    "lat": 34.994666,
+    "lon": 135.785037,
+    "x": 528.4,
+    "z": 431.6,
+    "deck_elev_m": 115.5,
+    "ground_below_m": 102.8,
+    "footprint_m": [
+     15.7,
+     10.2
+    ],
+    "long_axis_bearing_deg": 80.4,
+    "projects_toward_bearing_deg": 170,
+    "confidence": "HIGH",
+    "note": "See stage_structure below."
+   },
+   {
+    "name_en": "Okunoin",
+    "name_ja": "奥ノ院",
+    "lat": 34.994573,
+    "lon": 135.785574,
+    "x": 577.4,
+    "z": 441.9,
+    "elev_m": 116.3,
+    "footprint_m": [
+     18.85,
+     13.45
+    ],
+    "confidence": "HIGH",
+    "note": "Has its own smaller kake-zukuri stage; this is the viewpoint that looks BACK at the Hondo stage."
+   },
+   {
+    "name_en": "Otowa-no-taki (waterfall)",
+    "name_ja": "音羽の滝",
+    "lat": 34.994421,
+    "lon": 135.785251,
+    "x": 547.9,
+    "z": 458.8,
+    "elev_m": 96.0,
+    "confidence": "HIGH",
+    "note": "In the ravine floor; 19.5 m BELOW the Hondo terrace, reached by descending steps."
+   },
+   {
+    "name_en": "Koyasu-no-to (Koyasu pagoda)",
+    "name_ja": "子安塔",
+    "lat": 34.992925,
+    "lon": 135.784958,
+    "x": 521.2,
+    "z": 624.8,
+    "elev_m": 116.6,
+    "footprint_m": [
+     5.66,
+     5.77
+    ],
+    "height_m": 15.0,
+    "confidence": "HIGH position; height 15 m from ja.wikipedia",
+    "note": "193 m almost due SOUTH of the stage (bearing 182 deg), across the ravine, at essentially the same elevation."
+   }
+  ],
+  "relative_offsets_m": {
+   "niomon_to_sanjunoto": {
+    "east": 45.5,
+    "north": -40.5,
+    "dist": 60.9,
+    "bearing_deg": 131.7
+   },
+   "sanjunoto_to_hondo": {
+    "east": 101.0,
+    "north": -31.0,
+    "dist": 105.7,
+    "bearing_deg": 107.1
+   },
+   "hondo_to_butai": {
+    "east": 8.5,
+    "north": -13.0,
+    "dist": 15.5,
+    "bearing_deg": 146.8
+   },
+   "butai_to_okunoin": {
+    "east": 49.0,
+    "north": -10.3,
+    "dist": 50.1,
+    "bearing_deg": 101.9
+   },
+   "butai_to_otowa": {
+    "east": 19.5,
+    "north": -27.2,
+    "dist": 33.5,
+    "bearing_deg": 144.4
+   },
+   "butai_to_koyasu": {
+    "east": -7.2,
+    "north": -193.2,
+    "dist": 193.3,
+    "bearing_deg": 182.1
+   },
+   "okunoin_to_butai_view": {
+    "east": -49.0,
+    "north": 10.3,
+    "dist": 50.1,
+    "bearing_deg": 281.9
+   }
+  },
+  "stage_structure": {
+   "deck_elev_m": 115.5,
+   "ground_under_stage_centre_m": 102.8,
+   "height_above_ground_at_centre_m": 12.7,
+   "height_above_ground_at_outer_SE_corner_m": 14.4,
+   "commonly_cited_height_m": 13,
+   "verdict": "CONFIRMED. The 13 m figure is right. GSI 1 m LiDAR gives 115.5 m deck minus 102.8 m bare ground = 12.7 m at the stage centre, rising to ~14.4 m at the outer corner where the slope has fallen to 101.1 m.",
+   "deck_area_m2_osm": 160.1,
+   "deck_area_m2_commonly_cited": 190,
+   "area_discrepancy_note": "OSM polygon is 15.7 x 10.2 m = 160 m2. The usual 190 m2 figure implies ~15.7 x 12.1 m, i.e. it includes the strip of decking that runs under the Hondo eaves. Use 15.7 m wide x 12 m deep if you want to match the cited area.",
+   "pillars": {
+    "total_under_hondo_and_stage": 139,
+    "material": "keyaki (Japanese zelkova, Zelkova serrata)",
+    "front_stage_pillars": 6,
+    "front_pillar_section": "16-sided (平面十六角形)",
+    "front_pillar_length_m": 12.0,
+    "joinery": "kake-zukuri (懸造) scaffold; mortise-and-tenon, no nails",
+    "source": "ja.wikipedia 清水寺: 'ケヤキ材の長い柱（139本という）' and 'もっとも手前（南）に位置し、せり出した舞台を支える6本の柱は平面十六角形で、長さ12メートルに及ぶ'",
+    "derived_grid": {
+     "front_row_spacing_m": 3.14,
+     "assumed_rows": 4,
+     "assumed_cols": 6,
+     "pillars_under_stage_proper_est": 24,
+     "height_range_m": [
+      0.0,
+      14.4
+     ],
+     "confidence": "MED - the 6 front pillars and 12 m length are sourced; the 6-across x 4-deep grid and 3.14 m spacing are DERIVED by dividing the 15.7 m stage width by the 6 sourced front pillars (5 bays). Row count and depth spacing are assumed, not sourced."
+    }
+   }
+  }
+ },
+ "uncertainty_register": [
+  {
+   "item": "Anchor coordinate supplied in the brief (34.99806, 135.78056)",
+   "status": "REJECTED",
+   "detail": "That point is 186 m ESE of the pagoda, on the Ninenzaka/Sannenzaka junction. Replaced with 34.9985564, 135.7792488 (OSM footprint centroid; ja.wikipedia infobox agrees to 0.9 m).",
+   "confidence": "HIGH that the replacement is correct"
+  },
+  {
+   "item": "Gion elevation guessed as 45-50 m ASL in the brief",
+   "status": "CORRECTED",
+   "detail": "GSI 1 m LiDAR gives 39.0 m at Shijo x Hanamikoji and 39.0-39.2 m along Shirakawa/Shinbashi. Gion is ~39 m, about 8 m lower than assumed.",
+   "confidence": "HIGH"
+  },
+  {
+   "item": "Kiyomizu-dera stage at 240-250 m ASL (brief's suspicion that this is too high)",
+   "status": "CORRECTED - the suspicion was right",
+   "detail": "The stage deck is ~115.5 m ASL, not 240-250 m. The whole temple sits between 96 m (Otowa falls) and 122 m (Jishu Shrine). The 240-250 m figure is roughly the elevation of the Higashiyama ridge BEHIND the temple, not the temple itself.",
+   "confidence": "HIGH"
+  },
+  {
+   "item": "Kyoto Tower distance from the stage, guessed at ~3.5 km WSW",
+   "status": "CORRECTED",
+   "detail": "Actual 2.47 km at bearing 251.3 deg. WSW was right; the distance was ~40% too large.",
+   "confidence": "HIGH on geometry; tower coordinate 34.987536/135.759339 is MED (not independently re-verified this session)"
+  },
+  {
+   "item": "Stage deck area",
+   "status": "UNRESOLVED CONFLICT",
+   "detail": "OSM polygon = 15.7 x 10.2 m = 160 m2. Commonly cited = 190 m2. Chose to report both; 190 m2 implies ~12 m depth, which likely includes decking under the Hondo eaves. Picked OSM for the geometry and flagged the cited area.",
+   "confidence": "MED"
+  },
+  {
+   "item": "Pillar grid beneath the stage",
+   "status": "PARTLY ASSUMED",
+   "detail": "Sourced: 139 keyaki pillars total under Hondo+stage, 6 front pillars, 16-sided section, 12 m long (ja.wikipedia). ASSUMED: a 6-across x 4-deep grid at 3.14 m spacing under the stage proper (~24 pillars). Column spacing is derived from 15.7 m / 5 bays; the row count and depth spacing are my assumption and are NOT sourced.",
+   "confidence": "LOW on the grid, HIGH on the 139/6/12 m figures"
+  },
+  {
+   "item": "Ishibe-koji geometry",
+   "status": "INCOMPLETE",
+   "detail": "OSM maps only a 35 m E-W stub (way 526198278). The real alley is L-shaped and roughly 100-150 m long with a dog-leg. Face-to-face width 5.3 m is from only 3 samples. Treat the alley's full plan as UNSURVEYED - it needs manual tracing from imagery.",
+   "confidence": "LOW"
+  },
+  {
+   "item": "Nene-no-michi extent and naming",
+   "status": "ASSUMED",
+   "detail": "OSM has no way named ねねの道. I identified it as way 30882780 (290.6 m, N-S) because the OSM information node named ねねの道 (35.0005286, 135.7799500) sits on it. North/south end points are therefore MED, not HIGH.",
+   "confidence": "MED"
+  },
+  {
+   "item": "Nene-no-michi surface",
+   "status": "ASSUMED",
+   "detail": "Untagged in OSM. Recorded as granite slab paving from general knowledge of the street. Not verified against a second source.",
+   "confidence": "MED"
+  },
+  {
+   "item": "Ninenzaka vs Sannenzaka boundary, and OSM way 710696944",
+   "status": "AMBIGUOUS",
+   "detail": "OSM tags way 710696944 (pagoda -> Sannenzaka head, 173 m, bearing 106.6 deg) as 三年坂, although it lies WEST of the Ninenzaka/Sannenzaka junction and functionally is the pagoda-to-Sannenzaka link. I kept OSM's split (Ninenzaka = the 143 m N-S lane; Sannenzaka = the 216 m lane south of the junction) and listed the connector separately. A different source may draw the boundary differently.",
+   "confidence": "MED"
+  },
+  {
+   "item": "Carriageway (paved) widths",
+   "status": "ESTIMATED",
+   "detail": "Only three OSM width tags exist in the whole route: Shirakawa-Minami 4.5 m, Ninenzaka 4 m, Sannenzaka 4 m. Every other carriageway width in the street table is my estimate, generally face-to-face minus 1.5-3 m for eaves, steps and frontage. Treat all unstarred carriageway widths as MED at best.",
+   "confidence": "MED to LOW"
+  },
+  {
+   "item": "Face-to-face widths on open-sided streets",
+   "status": "BIASED HIGH",
+   "detail": "Measured by ray-casting to OSM building polygons, capped at 20 m. Where one side is a garden, park, canal or temple wall with no mapped building (Shirakawa-Minami 23.0 m, Nene-no-michi 10.4 m, Shimogawara 11.5 m), the figure overstates the enclosed width. Streets with continuous machiya on both sides (Hanamikoji 9.1 m, Yasaka-dori 6.3 m, Ninenzaka 6.1 m, Sannenzaka 7.4 m) are reliable.",
+   "confidence": "HIGH for enclosed streets, LOW for open-sided ones"
+  },
+  {
+   "item": "Step riser and tread on Ninenzaka and Sannenzaka",
+   "status": "DERIVED",
+   "detail": "Sannenzaka: 46 steps over a 32.0 m run and 6.0 m rise => 0.70 m tread, 0.13 m riser, 18.8% average grade on the flight. Ninenzaka: 17 steps over 15.9 m and ~2.5 m rise => 0.94 m tread, 0.15 m riser. Step COUNTS are from OSM tags (HIGH); the tread/riser split is arithmetic from way length and DEM endpoints and assumes uniform steps with no landings, which is unlikely to be exactly true.",
+   "confidence": "HIGH on counts, MED on tread/riser"
+  },
+  {
+   "item": "Stone torii height at Yasaka Shrine",
+   "status": "UNVERIFIED",
+   "detail": "Span measured at 13.5 m from OSM. Height recorded as ~9.5 m estimate. ja.wikipedia gives the 1646 construction date but no dimensions.",
+   "confidence": "LOW on height"
+  },
+  {
+   "item": "Yasaka Shrine gate and Maiden heights",
+   "status": "UNVERIFIED",
+   "detail": "Footprints are HIGH (OSM polygons) but no height is published in ja.wikipedia for the West Romon, South Romon, Maiden or Honden. No heights are asserted.",
+   "confidence": "n/a - omitted rather than guessed"
+  },
+  {
+   "item": "Niomon height at Kiyomizu-dera (14 m)",
+   "status": "SINGLE SOURCE",
+   "detail": "From the OSM height tag only. ja.wikipedia gives no figure. Not cross-checked.",
+   "confidence": "MED"
+  },
+  {
+   "item": "Mt Atago and Daimonji elevations/bearings",
+   "status": "SAMPLE POINTS, NOT SUMMITS",
+   "detail": "GSI returned 867.2 m for my Atago sample (true summit 924 m) and 209.5 m for my Daimonji sample (true summit 466 m). My coordinates are on the flanks. Bearings are indicative only; do not use these two rows for skyline placement without re-picking summit coordinates.",
+   "confidence": "LOW"
+  },
+  {
+   "item": "Maruyama Park weeping cherry position",
+   "status": "SINGLE SOURCE",
+   "detail": "OSM node 4517278152, tagged natural=tree and named 枝垂桜. Assumed to be the famous Gion shidarezakura, but the tag does not say so explicitly and there is a second unnamed 枝垂桜 node 30 m away.",
+   "confidence": "MED"
+  },
+  {
+   "item": "Kodai-ji precinct centroid elevation",
+   "status": "NOT SAMPLED",
+   "detail": "Left null in the landmark table. The Daidokoro-zaka approach was sampled instead (57.6 m at the foot, 68.7 m at the top of the 32 steps).",
+   "confidence": "n/a"
+  },
+  {
+   "item": "Absolute vertical datum",
+   "status": "NOTE",
+   "detail": "All elevations are GSI orthometric heights above Tokyo Peil (the Japanese national height datum), not WGS84 ellipsoidal heights. Consistent internally; offset by roughly +37 m from the ellipsoid in this area if you ever mix in GPS altitudes.",
+   "confidence": "HIGH"
+  },
+  {
+   "item": "DEM under buildings",
+   "status": "NOTE",
+   "detail": "The GSI 1 m product is a bare-earth DEM, which is why it correctly returned 102.8 m under the Kiyomizu stage rather than the deck. In dense machiya blocks the ground return can still be sparse, so values inside built-up areas may be interpolated. Street-centreline samples are reliable; samples inside building footprints are MED.",
+   "confidence": "MED"
+  }
+ ]
+}

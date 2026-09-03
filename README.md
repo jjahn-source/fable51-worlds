@@ -24,6 +24,25 @@ The square and its surrounding blocks — Powell, Geary, Post and Stockton — o
 | **Interiors** | Apple + Nintendo, 23 interactive objects |
 | **Validation** | 34 camera-matched viewpoints vs. real photographs · 147 comparison sheets · 9 independent reviewer reports |
 
+### ⛩️ [Higashiyama, Kyoto](kyoto-higashiyama/)
+
+<a href="kyoto-higashiyama/media/kyoto-higashiyama-walkthrough.mp4"><img src="kyoto-higashiyama/media/preview.gif" width="100%" alt="Higashiyama walkthrough: the Yasaka Pagoda revealed at the end of Yasaka-dori"></a>
+
+<sub>▶ [Watch the full 54-second walkthrough](kyoto-higashiyama/media/kyoto-higashiyama-walkthrough.mp4) · 1920×1080 · seven scenes — over the roofs, the Shirakawa, Yasaka Shrine, the weeping cherry, the Yasaka Pagoda, Sannenzaka, and Kiyomizu-dera at sunset</sub>
+
+Kyoto's Southern Higashiyama walking route — **Gion → Hanamikoji → Yasaka Shrine → Nene-no-michi → the Yasaka Pagoda → Ninenzaka → Sannenzaka → Kiyomizu-zaka → Kiyomizu-dera** — 2.3 km of it, continuously walkable, climbing 76 m from the ochaya on Hanamikoji to the temple stage. Rendered **3D-to-2D as a hand-painted anime background**: cel materials with hue-shifted shadow bands, screen-space ink taken from a second difference of depth, and a split-tone grade. **No binary assets at all** — every sign, noren, lantern, roof tile and paving stone is drawn with Canvas2D at start-up.
+
+| | |
+|---|---|
+| **Run it** | `cd kyoto-higashiyama && npm install && npm run dev` |
+| **Or, with nothing installed** | `npm run viewer && open viewer/higashiyama.html` — one self-contained HTML file |
+| **Buildings** | 266 buildings · 471 shopfronts · 19 hero landmarks across 15 districts |
+| **Detail** | 1,938 trees (11 species) · 3,076 props (60 kinds) · 142 interactions |
+| **Survey** | Every elevation an independent GSI 1 m LiDAR query; street widths ray-cast to OSM footprints every 8 m |
+| **Validation** | 52 authored viewpoints · full-route player walkthrough · per-street passability sweep · zero page errors |
+
+Six widely-repeated figures were overturned by the survey and the world is built on the measured ones — the Yasaka Pagoda is **38.79 m, not 46**, with a *convex* taper; the Kiyomizu stage deck is at **115.5 m ASL, not 240**; the stage is **21.8 × 9.6 m on 168 pillars of 0.64 m diameter**, not 18 × 10 m on 139 pillars of 2 m.
+
 More worlds coming.
 
 ---

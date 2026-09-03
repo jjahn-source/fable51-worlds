@@ -1,0 +1,198 @@
+</script>
+
+<script type="module">
+/* ------------------------------------------------------------------ *
+ * Viewer chrome.
+ *
+ * The world above is the project's own production bundle, unmodified.  This
+ * adds only what a viewer needs that a game does not: an index of the 52
+ * authored viewpoints, a way to jump to one, and a look control that works
+ * without pointer lock -- because a page in a sandboxed frame usually cannot
+ * take the pointer, and the world is unusable if looking around depends on it.
+ * ------------------------------------------------------------------ */
+
+const ACTS = [
+  { jp: '祇園・白川', en: 'Gion', test: (id) => id.startsWith('gion-') },
+  { jp: '八坂神社・円山', en: 'Yasaka Shrine', test: (id) => id.startsWith('yasaka-') || id.startsWith('maruyama-') },
+  { jp: 'ねねの道・石塀小路', en: 'the quiet transition', test: (id) => id.startsWith('nene-') || id.startsWith('ishibekoji') || id.startsWith('shimogawara') },
+  { jp: '八坂の塔', en: 'the Yasaka Pagoda', test: (id) => id.startsWith('pagoda-') || id === 'koshindo' },
+  { jp: '二年坂・産寧坂・清水坂', en: 'the climb', test: (id) => id.startsWith('ninenzaka') || id.startsWith('sannenzaka') || id.startsWith('kiyomizuzaka') || id === 'kiyomizu-michi' || id === 'chawanzaka' },
+  { jp: '清水寺', en: 'Kiyomizu-dera', test: () => true },
+];
+
+/** Where the readout gets its Japanese name: the district under the player. */
+const boot = () => {
+  const S = window.__scene;
+  if (!S || !S.HERO_VIEWS) return void setTimeout(boot, 60);
+
+  const { player, time, pipeline, hud, world, cameras } = S;
+  const views = S.HERO_VIEWS;
+  const canvas = document.getElementById('view');
+  const railEl = document.getElementById('views');
+  const readout = document.getElementById('readout');
+  const roJp = readout.querySelector('.jp');
+  const roMeta = readout.querySelector('.meta');
+
+  /* ----------------------------- the index ----------------------------- */
+  const buckets = ACTS.map((a) => ({ act: a, items: [] }));
+  for (const v of views) {
+    // sunset variants are a time-of-day control, not a separate place
+    if (v.id.endsWith('-sunset') || v.id.endsWith('-dusk')) continue;
+    (buckets.find((b) => b.act.test(v.id)) || buckets[buckets.length - 1]).items.push(v);
+  }
+
+  const buttons = new Map();
+  for (const b of buckets) {
+    if (!b.items.length) continue;
+    const h = document.createElement('div');
+    h.className = 'act';
+    h.innerHTML = '<span class="jp"></span><span class="en"></span>';
+    h.querySelector('.jp').textContent = b.act.jp;
+    h.querySelector('.en').textContent = b.act.en;
+    railEl.appendChild(h);
+
+    for (const v of b.items) {
+      const el = document.createElement('button');
+      el.type = 'button';
+      el.className = 'view';
+      el.textContent = v.name;
+      if (v.note) {
+        const t = document.createElement('span');
+        t.className = 'tag';
+        t.textContent = v.note;
+        el.appendChild(t);
+      }
+      el.addEventListener('click', () => go(v));
+      railEl.appendChild(el);
+      buttons.set(v.id, el);
+    }
+  }
+
+  let current = null;
+  function go(v) {
+    player.teleport(v.x, v.z, v.yaw, v.pitch ?? 0);
+    if (v.time) setTime(v.time);
+    for (const [id, el] of buttons) el.setAttribute('aria-current', String(id === v.id));
+    current = v;
+    buttons.get(v.id)?.scrollIntoView({ block: 'nearest' });
+    enter();
+  }
+
+  /* --------------------------- time of day ----------------------------- */
+  const timeBtns = [...document.querySelectorAll('#timeGroup button')];
+  function setTime(key) {
+    time.set(key);
+    pipeline.setGrade(time.grade);
+    for (const b of timeBtns) b.setAttribute('aria-pressed', String(b.dataset.time === key));
+  }
+  for (const b of timeBtns) b.addEventListener('click', () => setTime(b.dataset.time));
+
+  /* ---------------------------- render toggles -------------------------- */
+  const toggle = (el, get, set) => el.addEventListener('click', () => {
+    set(!get());
+    el.setAttribute('aria-pressed', String(get()));
+  });
+  toggle(document.getElementById('tInk'),
+    () => pipeline.enabled.ink, (v) => { pipeline.enabled.ink = v; });
+  toggle(document.getElementById('tGrade'),
+    () => pipeline.enabled.grade, (v) => { pipeline.enabled.grade = v; });
+  const statsBtn = document.getElementById('tStats');
+  statsBtn.addEventListener('click', () => {
+    const on = hud.toggleDebug();
+    statsBtn.setAttribute('aria-pressed', String(on));
+  });
+
+  /* ------------------------------ the rail ----------------------------- */
+  const railBtn = document.getElementById('railToggle');
+  railBtn.addEventListener('click', () => {
+    const closed = document.body.classList.toggle('rail-closed');
+    railBtn.setAttribute('aria-expanded', String(!closed));
+    window.dispatchEvent(new Event('resize'));
+  });
+
+  /* ------------------------------------------------------------------ *
+   * Looking around without the pointer.
+   *
+   * A published page usually cannot take a pointer lock, and the walker's
+   * mouse-look is built on one -- so in a frame the world would render
+   * beautifully and be impossible to turn around in.  Drag-to-look writes the
+   * same `yaw`/`pitch` the locked path writes, and `locked` is set by hand so
+   * the keyboard still drives movement.  If the real lock does succeed, the
+   * drag handler stands down rather than double-counting.
+   * ------------------------------------------------------------------ */
+  let dragging = false, px = 0, py = 0;
+  const SENS = 0.0042;
+
+  canvas.addEventListener('pointerdown', (e) => {
+    if (document.pointerLockElement === canvas) return;
+    dragging = true;
+    px = e.clientX; py = e.clientY;
+    canvas.setPointerCapture(e.pointerId);
+    canvas.style.cursor = 'grabbing';
+  });
+  canvas.addEventListener('pointermove', (e) => {
+    if (!dragging || document.pointerLockElement === canvas) return;
+    player.yaw -= (e.clientX - px) * SENS;
+    player.pitch -= (e.clientY - py) * SENS;
+    player.pitch = Math.max(-1.2, Math.min(1.1, player.pitch));
+    px = e.clientX; py = e.clientY;
+  });
+  const endDrag = (e) => {
+    if (!dragging) return;
+    dragging = false;
+    canvas.style.cursor = 'grab';
+    try { canvas.releasePointerCapture(e.pointerId); } catch { /* already gone */ }
+  };
+  canvas.addEventListener('pointerup', endDrag);
+  canvas.addEventListener('pointercancel', endDrag);
+  canvas.style.cursor = 'grab';
+
+  /* Entering: the app hides its plate on pointer-lock, which may never come.
+   * Hide it here too, and turn the walker on so WASD works regardless. */
+  const startEl = document.getElementById('start');
+  let entered = false;
+  function enter() {
+    if (!entered) {
+      entered = true;
+      startEl.classList.add('gone');
+      readout.hidden = false;
+      hud.onStart?.();            // starts audio; idempotent
+    }
+    player.locked = true;
+    document.getElementById('dot').classList.add('on');
+  }
+  startEl.addEventListener('click', enter);
+  canvas.addEventListener('pointerdown', enter);
+
+  /* Keep the walker live even when the browser drops a real pointer lock. */
+  document.addEventListener('pointerlockchange', () => {
+    if (entered) player.locked = true;
+  });
+
+  /* Space and arrows must not scroll the page under the canvas. */
+  window.addEventListener('keydown', (e) => {
+    if (entered && ['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  /* ------------------------------ readout ------------------------------ */
+  let lastId = null;
+  setInterval(() => {
+    if (!entered) return;
+    const d = world.districtAt(player.pos.x, player.pos.z);
+    const name = d ? d.name : '東山';
+    const label = d ? d.label : 'the hillside';
+    if (name !== lastId) { roJp.textContent = name; lastId = name; }
+    roMeta.textContent = `${label} · ${player.pos.y.toFixed(0)} m`;
+  }, 220);
+
+  /* Open on the frame the whole project is built around. */
+  const opening = views.find((v) => v.id === 'pagoda-classic') || views[0];
+  for (const [id, el] of buttons) el.setAttribute('aria-current', String(id === opening.id));
+  player.teleport(opening.x, opening.z, opening.yaw, opening.pitch ?? 0);
+  current = opening;
+};
+
+boot();
+</script>

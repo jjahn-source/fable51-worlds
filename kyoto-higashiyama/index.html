@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>東山 — Higashiyama</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #e7ecf4; }
+  canvas { display: block; width: 100vw; height: 100vh; }
+
+  #hud {
+    position: fixed; inset: 0; pointer-events: none;
+    font: 13px/1.5 'Hiragino Mincho ProN', 'Yu Mincho', Georgia, serif;
+    color: #f4efe4; text-shadow: 0 1px 3px rgba(30,26,44,.6);
+  }
+
+  /* the opening plate */
+  #start {
+    position: fixed; inset: 0; display: grid; place-items: center;
+    background: linear-gradient(160deg, #2e2a3c 0%, #4a3a44 60%, #6b4a48 100%);
+    pointer-events: auto; cursor: pointer; transition: opacity .7s ease;
+    z-index: 20;
+  }
+  #start.gone { opacity: 0; pointer-events: none; }
+  #start .card { text-align: center; max-width: 560px; padding: 0 28px; }
+  #start h1 {
+    font-size: 58px; margin: 0 0 6px; letter-spacing: .28em;
+    font-weight: 400; color: #f7f1e4;
+  }
+  #start h2 {
+    font-size: 15px; margin: 0 0 26px; letter-spacing: .34em;
+    font-weight: 400; color: #c9b8a8; text-transform: uppercase;
+  }
+  #start p { font-size: 14px; line-height: 1.9; color: #ded2c4; margin: 0 0 22px; }
+  #start .go {
+    display: inline-block; padding: 11px 30px; border: 1px solid #b09070;
+    color: #f2e6d2; letter-spacing: .22em; font-size: 12px; text-transform: uppercase;
+  }
+  #start .keys { margin-top: 30px; font-size: 11.5px; color: #a89684; letter-spacing: .06em; }
+  #start .keys b { color: #d8c8b4; font-weight: 400; }
+
+  /* interaction prompt */
+  #prompt {
+    position: fixed; left: 50%; bottom: 16%; transform: translateX(-50%);
+    padding: 7px 16px; border: 1px solid rgba(244,239,228,.34);
+    background: rgba(38,32,52,.42); backdrop-filter: blur(3px);
+    letter-spacing: .1em; font-size: 12.5px; opacity: 0;
+    transition: opacity .18s ease; white-space: nowrap;
+  }
+  #prompt.on { opacity: 1; }
+
+  /* the reticule -- a dot, not a crosshair */
+  #dot {
+    position: fixed; left: 50%; top: 50%; width: 4px; height: 4px;
+    margin: -2px 0 0 -2px; border-radius: 50%;
+    background: rgba(247,241,228,.55); opacity: 0; transition: opacity .2s;
+  }
+  #dot.on { opacity: 1; }
+
+  /* the place name, shown briefly on entering a district */
+  #place {
+    position: fixed; left: 46px; bottom: 46px; opacity: 0;
+    transition: opacity .8s ease;
+  }
+  #place.on { opacity: 1; }
+  #place .jp { font-size: 30px; letter-spacing: .2em; display: block; }
+  #place .en { font-size: 11px; letter-spacing: .3em; color: #d0c2b4;
+               text-transform: uppercase; display: block; margin-top: 3px; }
+
+  /* a transient toast for toggles */
+  #flash {
+    position: fixed; left: 50%; top: 8%; transform: translateX(-50%);
+    font-size: 12px; letter-spacing: .16em; opacity: 0; transition: opacity .3s;
+  }
+  #flash.on { opacity: 1; }
+
+  #debug {
+    position: fixed; right: 12px; top: 12px; display: none;
+    font: 11px/1.55 ui-monospace, Menlo, monospace; text-align: right;
+    color: #e4dcc8; background: rgba(30,26,44,.42); padding: 8px 11px;
+    white-space: pre;
+  }
+  #debug.on { display: block; }
+</style>
+</head>
+<body>
+  <canvas id="view"></canvas>
+
+  <div id="hud">
+    <div id="dot"></div>
+    <div id="prompt"></div>
+    <div id="place"><span class="jp"></span><span class="en"></span></div>
+    <div id="flash"></div>
+    <div id="debug"></div>
+  </div>
+
+  <div id="start">
+    <div class="card">
+      <h1>東山</h1>
+      <h2>Higashiyama</h2>
+      <p>
+        祇園から清水寺まで。<br />
+        Gion to Kiyomizu-dera, on foot, in spring.
+      </p>
+      <span class="go">click to walk</span>
+      <div class="keys">
+        <b>WASD</b> walk &nbsp;·&nbsp; <b>Shift</b> run &nbsp;·&nbsp; <b>mouse</b> look
+        &nbsp;·&nbsp; <b>E</b> interact<br />
+        <b>P</b> overview &nbsp;·&nbsp; <b>F</b> photo &nbsp;·&nbsp; <b>T</b> time of day
+        &nbsp;·&nbsp; <b>M</b> map &nbsp;·&nbsp; <b>R</b> return &nbsp;·&nbsp; <b>Esc</b> release
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
