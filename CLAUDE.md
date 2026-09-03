@@ -78,7 +78,7 @@ a world manifest. Nothing else changes. An adapter declares its licence,
 attribution and external requirements up front, and exposes `fetch(ctx)` plus
 `normalize(raw, ctx)`.
 
-Sources currently wired: `osm-overpass`, `overture`, `usgs-epqs`, `gsi-dem`,
+Sources currently wired: `osm-overpass`, `overture`, `usgs-3dep`, `gsi-dem`,
 `plateau`, `wikidata`, `wikimedia-commons`, `gtfs`, `mapillary`. See
 `docs/INGEST.md` for what each contributes and which are verified live.
 

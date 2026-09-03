@@ -44,7 +44,7 @@ noticing is wasted.
 Read `UNCERTAINTY.md` now, not later. It lists every measurement where sources
 disagreed. Adjudicate them while the world is still cheap to change.
 
-**Region matters.** `usgs-epqs` only answers inside the US; `gsi-dem` and `plateau`
+**Region matters.** `usgs-3dep` only answers inside the US; `gsi-dem` and `plateau`
 only inside Japan. Set `region` correctly or the elevation source silently skips
 and the world comes out flat. If your place is in neither, you need a new elevation
 adapter — Copernicus GLO-30 covers the globe at 30 m, which is coarse but honest.

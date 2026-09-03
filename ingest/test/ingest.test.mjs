@@ -15,7 +15,9 @@ import { createFrame, metresPerDegree, emitRuntimeModule } from '../src/geo.mjs'
 import { reconcile, fact } from '../src/provenance.mjs';
 import { verify } from '../src/pipeline.mjs';
 import { reconcileStorefronts, summarise } from '../src/storefronts.mjs';
+import { reconcileBuildings, storeyCheck } from '../src/buildings.mjs';
 import { parseCsv } from '../src/sources/gtfs.mjs';
+import { resolutionOf } from '../src/sources/usgs-3dep.mjs';
 import { LICENSES, assertKnownLicense } from '../src/licenses.mjs';
 import { ADAPTERS } from '../src/sources/index.mjs';
 
@@ -229,4 +231,98 @@ test('parseCsv handles escaped quotes and a UTF-8 BOM', () => {
 test('parseCsv tolerates CRLF and a missing trailing newline', () => {
   const rows = parseCsv('a,b\r\n1,2\r\n3,4');
   assert.deepEqual(rows, [{ a: '1', b: '2' }, { a: '3', b: '4' }]);
+});
+
+/* --------------------------------------------------- 3DEP resolution units */
+
+test('3DEP resolution in metres is passed through unchanged', () => {
+  // San Francisco: projected 1 m lidar raster.
+  const r = resolutionOf({ resolution: 1 }, 37.788);
+  assert.equal(r.resolutionM, 1);
+  assert.equal(r.resolutionUnit, 'metres');
+});
+
+test('3DEP resolution in degrees is converted, not reported as micrometres', () => {
+  // UNC Chapel Hill: 1/9 arc-second geographic raster answers 0.0000308641975.
+  // Reported verbatim as "metres" this reads as 30 micrometre resolution.
+  const r = resolutionOf({ resolution: 0.0000308641975 }, 35.911);
+  assert.equal(r.resolutionUnit, 'degrees');
+  assert.ok(r.resolutionM > 3 && r.resolutionM < 4, `expected ~3.4 m, got ${r.resolutionM}`);
+  assert.equal(r.resolutionRaw, 0.0000308641975);
+});
+
+test('a missing or non-numeric 3DEP resolution degrades to null', () => {
+  assert.equal(resolutionOf({}, 35.9).resolutionM, null);
+  assert.equal(resolutionOf({ resolution: 'n/a' }, 35.9).resolutionM, null);
+});
+
+/* ------------------------------------------------------------- building heights */
+
+const ring = (w, d) => [[0, 0], [w, 0], [w, d], [0, d], [0, 0]];
+const osmB = (id, name, heightM, levels, w = 50, d = 50) => ({
+  id, name, footprint: ring(w, d), heightM, levels,
+  heightSource: heightM != null ? 'osm:height' : null, tags: {},
+});
+const ovtB = (id, name, heightM, w = 50, d = 50) => ({
+  id: `overture/${id}`, name, footprint: ring(w, d), heightM, levels: null, roofShape: null,
+});
+
+test('an impossible storey height is rejected, not shipped', () => {
+  // The Davis Library case: Overture offered 11.73 m for an 8-floor building.
+  const { buildings, warnings } = reconcileBuildings({
+    osmBuildings: [osmB('way/44343213', 'Walter Royal Davis Library', null, 8, 100, 74)],
+    overtureBuildings: [ovtB('d605', 'Walter Royal Davis Library', 11.73, 100, 74)],
+  });
+  const davis = buildings.find((b) => b.id === 'way/44343213');
+  assert.equal(davis.heightM, null, 'a 1.47 m storey height must not survive');
+  assert.ok(davis.heightRejected, 'the rejection must be recorded, not silent');
+  assert.ok(warnings.some((w) => w.kind === 'implausible-height'));
+});
+
+test('a single-source height is kept but flagged as uncorroborated', () => {
+  const { buildings, warnings } = reconcileBuildings({
+    osmBuildings: [osmB('way/1', 'Hall', null, null)],
+    overtureBuildings: [ovtB('o1', 'Hall', 30)],
+  });
+  const b = buildings.find((x) => x.id === 'way/1');
+  assert.equal(b.heightM, 30);
+  assert.equal(b.heightConfidence, 'single-source');
+  assert.ok(warnings.some((w) => w.kind === 'uncorroborated-height'));
+});
+
+test('two sources that agree corroborate the height', () => {
+  const { buildings } = reconcileBuildings({
+    osmBuildings: [osmB('way/2', 'Tower', 52, 15)],
+    overtureBuildings: [ovtB('o2', 'Tower', 52.4)],
+  });
+  const b = buildings.find((x) => x.id === 'way/2');
+  assert.equal(b.heightConfidence, 'corroborated');
+  assert.equal(b.heightConflicts, null);
+});
+
+test('two sources that disagree produce a dispute, not a silent winner', () => {
+  const { buildings, warnings } = reconcileBuildings({
+    osmBuildings: [osmB('way/3', 'Block', 40, null)],
+    overtureBuildings: [ovtB('o3', 'Block', 12)],
+  });
+  const b = buildings.find((x) => x.id === 'way/3');
+  assert.equal(b.heightConfidence, 'disputed');
+  assert.equal(b.heightM, 40, 'the higher-confidence OSM height tag wins');
+  assert.ok(b.heightConflicts.length === 1);
+  assert.ok(warnings.some((w) => w.kind === 'disputed-height'));
+});
+
+test('footprints too far apart or too different in area do not merge', () => {
+  const { buildings } = reconcileBuildings({
+    osmBuildings: [osmB('way/4', 'A', null, null, 50, 50)],
+    overtureBuildings: [ovtB('o4', 'A', 30, 10, 10)], // 100 m2 vs 2500 m2
+  });
+  assert.equal(buildings.find((x) => x.id === 'way/4').heightM, null);
+  assert.ok(buildings.some((b) => b.unmatched));
+});
+
+test('storeyCheck returns null when the storey count is unknown', () => {
+  assert.equal(storeyCheck(11.73, null), null);
+  assert.equal(storeyCheck(11.73, 8).ok, false);
+  assert.equal(storeyCheck(29, 8).ok, true);
 });

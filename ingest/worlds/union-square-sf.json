@@ -34,7 +34,7 @@
       "options": { "release": "2026-08-19.0" }
     },
     {
-      "adapter": "usgs-epqs",
+      "adapter": "usgs-3dep",
       "required": true,
       "_comment": "25 m grid over the bbox; San Francisco's block-scale grade needs it and the brief says the environment must not accidentally become flat.",
       "options": { "stepM": 25 }

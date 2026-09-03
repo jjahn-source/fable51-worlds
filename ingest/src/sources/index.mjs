@@ -14,7 +14,7 @@
  */
 import osmOverpass from './osm-overpass.mjs';
 import overture from './overture.mjs';
-import usgsEpqs from './usgs-epqs.mjs';
+import usgs3dep from './usgs-3dep.mjs';
 import gsiDem from './gsi-dem.mjs';
 import plateau from './plateau.mjs';
 import wikidata from './wikidata.mjs';
@@ -23,7 +23,7 @@ import gtfs from './gtfs.mjs';
 import mapillary from './mapillary.mjs';
 
 export const ADAPTERS = Object.fromEntries(
-  [osmOverpass, overture, usgsEpqs, gsiDem, plateau, wikidata, wikimediaCommons, gtfs, mapillary]
+  [osmOverpass, overture, usgs3dep, gsiDem, plateau, wikidata, wikimediaCommons, gtfs, mapillary]
     .map((a) => [a.id, a]),
 );
 

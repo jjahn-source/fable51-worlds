@@ -14,6 +14,7 @@ import { getAdapter } from './sources/index.mjs';
 import { assertKnownLicense, renderAttribution, LICENSES } from './licenses.mjs';
 import { reconcile, renderUncertaintyRegister } from './provenance.mjs';
 import { reconcileStorefronts } from './storefronts.mjs';
+import { reconcileBuildings, summariseBuildings } from './buildings.mjs';
 
 /** Load and sanity-check a world manifest. */
 export async function loadWorld(repoRoot, worldId) {
@@ -156,6 +157,20 @@ export async function build(repoRoot, world, opts = {}) {
       const { chosen, conflicts } = reconcile(facts);
       register.push({ key: `${check.label} — ${check.property}`, chosen, conflicts });
     }
+  }
+
+  // Merge building footprints across sources. Heights get the same corroboration
+  // discipline as storefronts: one source is `single-source`, two that disagree is
+  // `disputed`, and a height implying an impossible storey height is rejected.
+  if (dataset.buildings?.length) {
+    const osmB = dataset.buildings.filter((b) => !b.id.startsWith('overture/'));
+    const ovtB = dataset.buildings.filter((b) => b.id.startsWith('overture/'));
+    const r = reconcileBuildings({ osmBuildings: osmB, overtureBuildings: ovtB });
+    dataset.buildings = r.buildings;
+    dataset.buildingWarnings = r.warnings;
+    const s = summariseBuildings(r.buildings);
+    log(`  heights: ${s.corroborated} corroborated, ${s.singleSource} single-source, ` +
+        `${s.disputed} disputed, ${s.rejected} rejected as implausible, ${s.noHeight} unknown`);
   }
 
   // Merge OSM POIs with Overture places into one storefront registry.

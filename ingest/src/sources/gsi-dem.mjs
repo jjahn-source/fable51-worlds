@@ -14,7 +14,7 @@
  * put the Kiyomizu stage deck at the wrong height.
  */
 import { fetchJson } from '../http.mjs';
-import { samplePoints } from './usgs-epqs.mjs';
+import { samplePoints } from './usgs-3dep.mjs';
 
 const ENDPOINT = 'https://cyberjapandata2.gsi.go.jp/general/dem/scripts/getelevation.php';
 

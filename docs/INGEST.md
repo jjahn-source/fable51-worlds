@@ -40,7 +40,7 @@ same data, and every record names the dataset, licence and fetch time it came fr
 |---|---|---|---|---|
 | `osm-overpass` | ODbL-1.0 | any | no | building footprints, street centrelines, POIs |
 | `overture` | ODbL-1.0 | any | no* | building heights, roof shapes, brand-resolved places |
-| `usgs-epqs` | US-PD | us | no | bare-earth ground elevation (3DEP) |
+| `usgs-3dep` | US-PD | us | no | bare-earth ground elevation (3DEP) |
 | `gsi-dem` | JP-GOV-2.0 | jp | no | bare-earth ground elevation (1 m lidar) |
 | `plateau` | JP-GOV-2.0 | jp | no | LOD2 city models, building usage, year built |
 | `wikidata` | CC0-1.0 | any | no | landmark dimensions and dates, as cross-checks |
@@ -58,7 +58,7 @@ Measured on 2026-09-03 from a laptop:
 |---|---|---|
 | `osm-overpass` | **verified** | 453 buildings / 707 streets / 748 POIs for union-square-sf — the 453 matches `FINAL_QA_REPORT.md`'s "453 OSM building footprints loaded" exactly. 4,728 buildings for kyoto-higashiyama. |
 | `overture` | **verified** | 420 buildings + 3,132 places for union-square-sf against release `2026-08-19.0`. Cold query 249 s; cached thereafter. |
-| `usgs-epqs` | **verified** | Returns `23.940353394` m at the Dewey Monument, matching the committed `ORIGIN_ELEVATION_M = 23.94`. 1 m raster, acquired 2023-03-04. |
+| `usgs-3dep` | **verified** | Returns `23.940353394` m at the Dewey Monument, matching the committed `ORIGIN_ELEVATION_M = 23.94`. 1 m raster, acquired 2023-03-04. |
 | `gsi-dem` | **verified** | Returns `61.3` m at the Yasaka Pagoda, matching `geo.json`'s `ground_elev_m: 61.3`. Layer `1m（レーザ）`. |
 | `wikidata` | **verified** | 73 measured landmarks in the SF bbox, 45 in the Kyoto bbox. |
 | `wikimedia-commons` | **verified** | 198 licence-clean references across 5 SF viewpoints; 15 downloaded and confirmed as valid multi-megapixel JPEGs. |
