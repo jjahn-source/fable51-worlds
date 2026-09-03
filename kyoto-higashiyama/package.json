@@ -1,0 +1,27 @@
+{
+  "name": "higashiyama",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Kyoto's Southern Higashiyama walking route \u2014 Gion to Kiyomizu-dera \u2014 rendered 3D-to-2D as a painted anime background.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "shots": "node tools/capture.mjs",
+    "perf": "node tools/perf.mjs",
+    "walk": "node tools/walkthrough.mjs",
+    "viewer": "vite build && node viewer/build.mjs"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0",
+    "playwright": "^1.49.0"
+  }
+}

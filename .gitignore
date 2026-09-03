@@ -219,6 +219,10 @@ __marimo__/
 
 # --- worlds ---
 node_modules/
+# ...and as a symlink: kyoto-higashiyama/node_modules pointed at an absolute
+# path on the author's machine, which the trailing-slash rule above does not
+# match, so it was tracked as a 120000 blob and broke on every clone.
+node_modules
 dist/
 .venv/
 qa/shots/
@@ -230,3 +234,13 @@ src/data/recon/osm_raw.json
 refs/**/*.jpg
 refs/**/*.png
 .DS_Store
+
+# Tour film: the recorded frames are an intermediate (gigabytes of PNG); the
+# encoded mp4 / gif / stills in media/ ARE committed.
+# Leading **/ because a pattern containing a slash is anchored to the directory
+# holding the .gitignore -- plain `media/frames/` would only match the repo
+# root's, never `kyoto-higashiyama/media/frames/`.
+**/media/frames/
+**/media/storyboard/
+**/media/_*
+**/qa/shots/

@@ -1,0 +1,551 @@
+{
+  "stats": {
+    "buildings": 274,
+    "shopfronts": 471,
+    "landmarks": 19,
+    "districts": 15,
+    "propKinds": 60,
+    "propDrawCalls": 24,
+    "propTriangles": 807654,
+    "propColliders": 224,
+    "propHooks": 194,
+    "propWires": 1040,
+    "propMotion": 4,
+    "propsDropped": 12,
+    "propInteractions": 41,
+    "bakedTriangles": 1785704,
+    "colliders": 12613,
+    "interactables": 141,
+    "trees": 1938,
+    "props": 3091,
+    "mergedMeshes": 67,
+    "drawCallsSaved": 1049,
+    "calls": 70,
+    "triangles": 3709188,
+    "geometries": 1112,
+    "textures": 245,
+    "programs": 57
+  },
+  "rows": [
+    {
+      "id": "gion-hanamikoji-north",
+      "calls": 408,
+      "triangles": 7791731,
+      "median": 1.3000001907348633,
+      "p99": 1.5999999046325684,
+      "programs": 41,
+      "geometries": 458,
+      "textures": 123
+    },
+    {
+      "id": "gion-hanamikoji-mid",
+      "calls": 303,
+      "triangles": 7496937,
+      "median": 1.1999998092651367,
+      "p99": 61.299999713897705,
+      "programs": 41,
+      "geometries": 468,
+      "textures": 123
+    },
+    {
+      "id": "gion-hanamikoji-dusk",
+      "calls": 262,
+      "triangles": 7495973,
+      "median": 1.0999999046325684,
+      "p99": 95.5,
+      "programs": 41,
+      "geometries": 468,
+      "textures": 123
+    },
+    {
+      "id": "gion-hanamikoji-back",
+      "calls": 313,
+      "triangles": 5298970,
+      "median": 1.700000286102295,
+      "p99": 2.299999713897705,
+      "programs": 41,
+      "geometries": 612,
+      "textures": 139
+    },
+    {
+      "id": "gion-shinbashi",
+      "calls": 287,
+      "triangles": 7092924,
+      "median": 2.200000286102295,
+      "p99": 3.1999998092651367,
+      "programs": 45,
+      "geometries": 680,
+      "textures": 164
+    },
+    {
+      "id": "gion-shirakawa",
+      "calls": 170,
+      "triangles": 6042928,
+      "median": 1.1999998092651367,
+      "p99": 106.90000009536743,
+      "programs": 45,
+      "geometries": 682,
+      "textures": 164
+    },
+    {
+      "id": "gion-shirakawa-bridge",
+      "calls": 145,
+      "triangles": 3389368,
+      "median": 0.8999996185302734,
+      "p99": 245.19999980926514,
+      "programs": 45,
+      "geometries": 697,
+      "textures": 164
+    },
+    {
+      "id": "gion-shijo-east",
+      "calls": 229,
+      "triangles": 6392470,
+      "median": 1,
+      "p99": 148.5,
+      "programs": 45,
+      "geometries": 697,
+      "textures": 164
+    },
+    {
+      "id": "yasaka-westgate",
+      "calls": 175,
+      "triangles": 6334842,
+      "median": 0.9000000953674316,
+      "p99": 141,
+      "programs": 45,
+      "geometries": 697,
+      "textures": 164
+    },
+    {
+      "id": "yasaka-westgate-under",
+      "calls": 291,
+      "triangles": 7710905,
+      "median": 1.3000001907348633,
+      "p99": 2.799999713897705,
+      "programs": 50,
+      "geometries": 772,
+      "textures": 173
+    },
+    {
+      "id": "yasaka-maiden",
+      "calls": 264,
+      "triangles": 7568749,
+      "median": 1.200000286102295,
+      "p99": 142.5,
+      "programs": 51,
+      "geometries": 773,
+      "textures": 173
+    },
+    {
+      "id": "yasaka-maiden-dusk",
+      "calls": 197,
+      "triangles": 6976260,
+      "median": 1,
+      "p99": 258.7999997138977,
+      "programs": 52,
+      "geometries": 774,
+      "textures": 174
+    },
+    {
+      "id": "yasaka-honden",
+      "calls": 113,
+      "triangles": 5039688,
+      "median": 0.8000001907348633,
+      "p99": 240.2000002861023,
+      "programs": 52,
+      "geometries": 774,
+      "textures": 174
+    },
+    {
+      "id": "yasaka-axis",
+      "calls": 133,
+      "triangles": 5403222,
+      "median": 0.8999996185302734,
+      "p99": 173.10000038146973,
+      "programs": 52,
+      "geometries": 774,
+      "textures": 174
+    },
+    {
+      "id": "yasaka-torii",
+      "calls": 152,
+      "triangles": 6153758,
+      "median": 0.8000001907348633,
+      "p99": 149.80000019073486,
+      "programs": 52,
+      "geometries": 774,
+      "textures": 174
+    },
+    {
+      "id": "maruyama-cherry",
+      "calls": 426,
+      "triangles": 6838876,
+      "median": 1.5999999046325684,
+      "p99": 180.30000019073486,
+      "programs": 52,
+      "geometries": 791,
+      "textures": 175
+    },
+    {
+      "id": "nene-north",
+      "calls": 769,
+      "triangles": 7947495,
+      "median": 2.5,
+      "p99": 3.700000286102295,
+      "programs": 56,
+      "geometries": 1094,
+      "textures": 244
+    },
+    {
+      "id": "nene-kodaiji",
+      "calls": 145,
+      "triangles": 6603132,
+      "median": 0.8000001907348633,
+      "p99": 22.300000190734863,
+      "programs": 56,
+      "geometries": 1095,
+      "textures": 244
+    },
+    {
+      "id": "nene-south",
+      "calls": 598,
+      "triangles": 7790565,
+      "median": 1.8000001907348633,
+      "p99": 3.0999999046325684,
+      "programs": 57,
+      "geometries": 1098,
+      "textures": 245
+    },
+    {
+      "id": "ishibekoji",
+      "calls": 332,
+      "triangles": 7325164,
+      "median": 1.3000001907348633,
+      "p99": 174.2000002861023,
+      "programs": 57,
+      "geometries": 1106,
+      "textures": 245
+    },
+    {
+      "id": "ishibekoji-turn",
+      "calls": 218,
+      "triangles": 6392124,
+      "median": 1,
+      "p99": 229.7999997138977,
+      "programs": 57,
+      "geometries": 1106,
+      "textures": 245
+    },
+    {
+      "id": "shimogawara",
+      "calls": 796,
+      "triangles": 7957639,
+      "median": 2.8000001907348633,
+      "p99": 4.300000190734863,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "pagoda-classic",
+      "calls": 501,
+      "triangles": 7753473,
+      "median": 2,
+      "p99": 123.40000009536743,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "pagoda-classic-sunset",
+      "calls": 499,
+      "triangles": 7753469,
+      "median": 1.8999996185302734,
+      "p99": 236.09999990463257,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "pagoda-far",
+      "calls": 644,
+      "triangles": 7764061,
+      "median": 2.3000001907348633,
+      "p99": 5.299999713897705,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "pagoda-frame",
+      "calls": 345,
+      "triangles": 7605573,
+      "median": 1.5,
+      "p99": 205.5,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "pagoda-base",
+      "calls": 171,
+      "triangles": 7343266,
+      "median": 0.9000000953674316,
+      "p99": 204.7000002861023,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "pagoda-east",
+      "calls": 352,
+      "triangles": 7570686,
+      "median": 1.5,
+      "p99": 247.69999980926514,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "koshindo",
+      "calls": 326,
+      "triangles": 6959123,
+      "median": 1.3000001907348633,
+      "p99": 206.69999980926514,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "ninenzaka-north",
+      "calls": 554,
+      "triangles": 6984957,
+      "median": 2.0999999046325684,
+      "p99": 236.30000019073486,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "ninenzaka-steps",
+      "calls": 487,
+      "triangles": 6825245,
+      "median": 1.6999998092651367,
+      "p99": 199.2999997138977,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "ninenzaka-back",
+      "calls": 466,
+      "triangles": 8274224,
+      "median": 2,
+      "p99": 199.59999990463257,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "sannenzaka-bottom",
+      "calls": 426,
+      "triangles": 6645809,
+      "median": 1.5999999046325684,
+      "p99": 244.40000009536743,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "sannenzaka-mid",
+      "calls": 309,
+      "triangles": 6486397,
+      "median": 1.299999713897705,
+      "p99": 250.09999990463257,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "sannenzaka-steps",
+      "calls": 196,
+      "triangles": 5953499,
+      "median": 0.9000000953674316,
+      "p99": 185.69999980926514,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "sannenzaka-down",
+      "calls": 648,
+      "triangles": 8797833,
+      "median": 2.3000001907348633,
+      "p99": 3.5,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizu-michi",
+      "calls": 498,
+      "triangles": 7137431,
+      "median": 1.700000286102295,
+      "p99": 200.40000009536743,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizuzaka-fork",
+      "calls": 266,
+      "triangles": 6222083,
+      "median": 1.1999998092651367,
+      "p99": 237.09999990463257,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizuzaka-shops",
+      "calls": 217,
+      "triangles": 5677475,
+      "median": 0.9000000953674316,
+      "p99": 199.69999980926514,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizuzaka-top",
+      "calls": 165,
+      "triangles": 5267818,
+      "median": 0.8000001907348633,
+      "p99": 196.80000019073486,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "chawanzaka",
+      "calls": 267,
+      "triangles": 5963267,
+      "median": 1.0999999046325684,
+      "p99": 216.09999990463257,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizu-niomon",
+      "calls": 154,
+      "triangles": 5268242,
+      "median": 0.7999997138977051,
+      "p99": 171.60000038146973,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizu-saimon",
+      "calls": 124,
+      "triangles": 5170514,
+      "median": 0.7000002861022949,
+      "p99": 1.4000000953674316,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizu-approach",
+      "calls": 85,
+      "triangles": 4499230,
+      "median": 0.7000002861022949,
+      "p99": 1.1999998092651367,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizu-stage",
+      "calls": 84,
+      "triangles": 4357406,
+      "median": 0.7000002861022949,
+      "p99": 1.200000286102295,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizu-under",
+      "calls": 104,
+      "triangles": 5432546,
+      "median": 0.7000002861022949,
+      "p99": 1.1000003814697266,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizu-okunoin",
+      "calls": 795,
+      "triangles": 8138687,
+      "median": 2.5,
+      "p99": 4.5,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizu-okunoin-sunset",
+      "calls": 795,
+      "triangles": 8138687,
+      "median": 2.5,
+      "p99": 3,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizu-otowa",
+      "calls": 710,
+      "triangles": 7869475,
+      "median": 2.3000001907348633,
+      "p99": 4.299999713897705,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizu-overlook",
+      "calls": 782,
+      "triangles": 8231135,
+      "median": 2.5999999046325684,
+      "p99": 3.5,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizu-overlook-sunset",
+      "calls": 782,
+      "triangles": 8231135,
+      "median": 2.5999999046325684,
+      "p99": 3.6999998092651367,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    },
+    {
+      "id": "kiyomizu-koyasu",
+      "calls": 66,
+      "triangles": 3709180,
+      "median": 0.6000003814697266,
+      "p99": 0.8000001907348633,
+      "programs": 57,
+      "geometries": 1112,
+      "textures": 245
+    }
+  ]
+}
