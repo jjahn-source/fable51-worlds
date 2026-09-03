@@ -41,6 +41,7 @@ same data, and every record names the dataset, licence and fetch time it came fr
 | `osm-overpass` | ODbL-1.0 | any | no | building footprints, street centrelines, POIs |
 | `overture` | ODbL-1.0 | any | no* | building heights, roof shapes, brand-resolved places |
 | `usgs-3dep` | US-PD | us | no | bare-earth ground elevation (3DEP) |
+| `usgs-lidar-lpc` | US-PD | us | py | **measured** building heights from the lidar point cloud |
 | `gsi-dem` | JP-GOV-2.0 | jp | no | bare-earth ground elevation (1 m lidar) |
 | `plateau` | JP-GOV-2.0 | jp | no | LOD2 city models, building usage, year built |
 | `wikidata` | CC0-1.0 | any | no | landmark dimensions and dates, as cross-checks |
@@ -49,6 +50,44 @@ same data, and every record names the dataset, licence and fetch time it came fr
 | `mapillary` | CC-BY-SA-4.0 | any | yes | street-level imagery and sign detections |
 
 \* `overture` needs the DuckDB CLI locally (`brew install duckdb`), not an API key.
+"py" = needs `pip3 install 'laspy[lazrs]' pyproj numpy`. It is the only non-Node step
+in the package and is optional in every manifest.
+
+### `usgs-lidar-lpc` — the only source that MEASURES a height
+
+Every other height here is an estimate: OSM's `height` is hand-entered,
+`building:levels` x an assumed storey height is a guess, Overture's is model-derived.
+This one takes the roof plane (p50 of returns inside the footprint, inset 2.5 m) minus
+the ground (p05 of an annulus outside) from the actual point cloud.
+
+It exists because of Davis Library. OSM had no height and no levels; Overture supplied
+**11.73 m for an eight-floor building** — 1.47 m per storey, wrong by 2.3x, on the
+subject of the world. Nothing could catch it: both corpora were silent on floor count
+so the storey gate could not fire, and 11.73 m sat unremarkably against a bbox median
+of 10.8 m.
+
+The lidar settles it: **28.77 m from 7,676 roof returns**, and Overture's figure is
+retained as a recorded conflict at a 59% delta rather than discarded.
+
+Two independent validations of the method, neither of them targeted:
+
+- the lidar ground ring reads 143-145 m where 3DEP's bare-earth DEM independently
+  reads **144.35 m** at the same centroid;
+- the **Morehead-Patterson Bell Tower** decomposes to a 20.69 m base roof plus 30.98 m
+  of "rooftop plant" (the tower shaft) = **51.67 m**, against a published **172 ft
+  (52.43 m)** — within 1.5 %.
+
+Percentiles, not extremes, on purpose. The maximum return inside a footprint is
+mechanical plant or a parapet; Davis reads 172.03 m at p50 and 178.79 m at max, and
+that 6.76 m gap is real rooftop plant, not the building. `rooftopPlantM` is reported
+separately so a facade builder can use it or ignore it.
+
+**Coverage is the catch.** 3DEP LPC is not nationwide, and vintage varies wildly — the
+Chapel Hill tile is `NC_PHASE1B_2001`, flown in 2001. A building put up after the
+survey is absent; one demolished since is still there. The adapter reports the survey
+date per tile and refuses to emit a height it cannot derive. On the UNC campus core it
+measured **90 of 113** buildings; the other 23 had too few returns and are listed in
+`lidarSkipped` rather than guessed at.
 
 ### What is verified, and what is not
 

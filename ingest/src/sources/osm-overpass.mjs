@@ -122,6 +122,10 @@ export default {
           const rec = {
             id,
             footprint,
+            // The lat/lon ring, kept alongside the projected footprint so sources
+            // that sample geospatial rasters or point clouds (usgs-lidar-lpc) can
+            // reproject it themselves without inverting our local frame.
+            ringGeo: geom.map((p) => [p.lon, p.lat]),
             centroidGeo,
             heightM: parseHeight(tags.height) ?? (levels ? levels * LEVEL_HEIGHT_M : null),
             heightSource: tags.height ? 'osm:height' : levels ? 'osm:building:levels' : null,

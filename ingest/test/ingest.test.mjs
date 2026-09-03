@@ -326,3 +326,39 @@ test('storeyCheck returns null when the storey count is unknown', () => {
   assert.equal(storeyCheck(11.73, 8).ok, false);
   assert.equal(storeyCheck(29, 8).ok, true);
 });
+
+test('a lidar measurement outranks both estimates', () => {
+  // The Davis Library resolution: OSM silent, Overture wrong at 11.73 m,
+  // lidar measures 26.98 m from 8,384 roof returns.
+  const { buildings } = reconcileBuildings({
+    osmBuildings: [osmB('way/44343213', 'Walter Royal Davis Library', null, null, 128, 115)],
+    overtureBuildings: [ovtB('d605', 'Walter Royal Davis Library', 11.73, 128, 115)],
+    lidarHeights: [{ id: 'way/44343213', heightM: 26.98, roofM: 172.05, groundM: 145.07, points: 8384, confidence: 'high' }],
+  });
+  const b = buildings.find((x) => x.id === 'way/44343213');
+  assert.equal(b.heightM, 26.98, 'the measured height must win');
+  assert.equal(b.heightConfidence, 'disputed', 'Overture disagreeing must still be recorded');
+  assert.ok(b.heightConflicts.some((c) => c.sourceId === 'overture' && c.value === 11.73));
+  assert.equal(b.lidar.points, 8384);
+});
+
+test('a lidar height is exempt from the storey gate; the levels tag is the suspect', () => {
+  const { buildings } = reconcileBuildings({
+    osmBuildings: [osmB('way/9', 'Odd', null, 20)], // a bogus levels tag
+    overtureBuildings: [],
+    lidarHeights: [{ id: 'way/9', heightM: 12, points: 900, confidence: 'high' }],
+  });
+  const b = buildings.find((x) => x.id === 'way/9');
+  assert.equal(b.heightM, 12, 'the measurement survives a nonsense levels tag');
+});
+
+test('a thinly-sampled lidar roof does not automatically outrank a good OSM tag', () => {
+  const { buildings } = reconcileBuildings({
+    osmBuildings: [osmB('way/10', 'Hall', 30, 9)],
+    overtureBuildings: [],
+    lidarHeights: [{ id: 'way/10', heightM: 18, points: 40, confidence: 'low' }],
+  });
+  const b = buildings.find((x) => x.id === 'way/10');
+  assert.equal(b.heightM, 30, 'a 40-return roof should not beat an explicit height tag');
+  assert.equal(b.heightConfidence, 'disputed');
+});

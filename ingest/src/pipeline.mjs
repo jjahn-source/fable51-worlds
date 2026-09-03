@@ -49,6 +49,10 @@ export async function runSources(repoRoot, world, opts = {}) {
   const cacheDir = path.join(repoRoot, '.ingest-cache', world.id);
 
   const results = [];
+  // Sources run in manifest order and each one can read what earlier sources
+  // produced. usgs-lidar-lpc needs osm-overpass's footprints; declaring it after
+  // osm-overpass is what makes that work.
+  const soFar = {};
   for (const decl of world.sources) {
     const adapter = getAdapter(decl.adapter);
     const label = decl.adapter;
@@ -68,6 +72,7 @@ export async function runSources(repoRoot, world, opts = {}) {
     const ctx = {
       world, frame, cacheDir: path.join(cacheDir, label), refresh, maxAgeMs,
       options: decl.options ?? {}, marginM: world.clipMarginM ?? 60,
+      priorData: soFar, buildings: soFar.buildings ?? [],
       log: (m) => log(`  ${m}`),
       progress: opts.progress,
     };
@@ -77,6 +82,10 @@ export async function runSources(repoRoot, world, opts = {}) {
       log(`- ${label}: fetching`);
       const { raw, provenance } = await adapter.fetch(ctx);
       const data = adapter.normalize(raw, ctx) ?? {};
+      for (const [k, v] of Object.entries(data)) {
+        if (Array.isArray(v) && Array.isArray(soFar[k])) soFar[k] = soFar[k].concat(v);
+        else soFar[k] = v;
+      }
       results.push({
         id: label, adapter, status: 'ok', data,
         provenance: { ...provenance, license: adapter.license, fetchedUtc: provenance?.fetchedUtc ?? new Date().toISOString() },
@@ -165,7 +174,10 @@ export async function build(repoRoot, world, opts = {}) {
   if (dataset.buildings?.length) {
     const osmB = dataset.buildings.filter((b) => !b.id.startsWith('overture/'));
     const ovtB = dataset.buildings.filter((b) => b.id.startsWith('overture/'));
-    const r = reconcileBuildings({ osmBuildings: osmB, overtureBuildings: ovtB });
+    const r = reconcileBuildings({
+      osmBuildings: osmB, overtureBuildings: ovtB,
+      lidarHeights: dataset.lidarHeights ?? [],
+    });
     dataset.buildings = r.buildings;
     dataset.buildingWarnings = r.warnings;
     const s = summariseBuildings(r.buildings);

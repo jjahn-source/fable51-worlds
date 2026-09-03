@@ -11,6 +11,7 @@ inherits the most restrictive of them.
 | `osm-overpass` | OpenStreetMap via the Overpass API | [Open Database License 1.0](https://opendatacommons.org/licenses/odbl/1-0/) | © OpenStreetMap contributors |
 | `overture` | Overture Maps Foundation — buildings and places | [Open Database License 1.0](https://opendatacommons.org/licenses/odbl/1-0/) | © Overture Maps Foundation; incorporates © OpenStreetMap contributors |
 | `usgs-3dep` | USGS 3DEP bare-earth elevation (ImageServer getSamples) | [US Government work, public domain](https://www.usa.gov/government-works) | U.S. Geological Survey, 3D Elevation Program |
+| `usgs-lidar-lpc` | USGS 3DEP lidar point cloud — measured building heights | [US Government work, public domain](https://www.usa.gov/government-works) | U.S. Geological Survey, 3D Elevation Program |
 | `wikidata` | Wikidata — landmark dimensions, dates and heritage designations | [Creative Commons Zero 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | Wikidata contributors (CC0) |
 | `wikimedia-commons` | Wikimedia Commons — georeferenced reference photography | [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Wikimedia Commons contributors; per-image licence recorded in the manifest |
 

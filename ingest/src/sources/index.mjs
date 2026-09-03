@@ -21,9 +21,10 @@ import wikidata from './wikidata.mjs';
 import wikimediaCommons from './wikimedia-commons.mjs';
 import gtfs from './gtfs.mjs';
 import mapillary from './mapillary.mjs';
+import usgsLidarLpc from './usgs-lidar-lpc.mjs';
 
 export const ADAPTERS = Object.fromEntries(
-  [osmOverpass, overture, usgs3dep, gsiDem, plateau, wikidata, wikimediaCommons, gtfs, mapillary]
+  [osmOverpass, overture, usgs3dep, usgsLidarLpc, gsiDem, plateau, wikidata, wikimediaCommons, gtfs, mapillary]
     .map((a) => [a.id, a]),
 );
 

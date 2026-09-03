@@ -70,9 +70,10 @@ function centroid(ring) {
  * @param {number} [args.centroidToleranceM=15]
  */
 export function reconcileBuildings({
-  osmBuildings = [], overtureBuildings = [],
+  osmBuildings = [], overtureBuildings = [], lidarHeights = [],
   areaTolerance = 0.15, centroidToleranceM = 15,
 }) {
+  const lidarById = new Map(lidarHeights.map((h) => [h.id, h]));
   const ovt = overtureBuildings.map((b) => ({
     b, area: footprintArea(b.footprint), c: centroid(b.footprint), used: false,
   }));
@@ -112,6 +113,19 @@ export function reconcileBuildings({
         confidence: 'medium', fetchedUtc: new Date().toISOString(),
       });
     }
+    // A lidar measurement outranks every estimate. OSM's height tag is
+    // hand-entered and Overture's is model-derived; this one is the roof plane
+    // minus the ground, from returns that actually hit the building. Only a
+    // thinly-sampled roof (<120 returns) drops to parity with the estimates.
+    const lidar = lidarById.get(osm.id);
+    if (lidar?.heightM != null) {
+      heights.push({
+        value: lidar.heightM, unit: 'm', sourceId: 'usgs-lidar-lpc', license: 'US-PD',
+        confidence: lidar.confidence === 'low' ? 'medium' : 'high',
+        note: `${lidar.points} roof returns; roof ${lidar.roofM} m, ground ${lidar.groundM} m`,
+        fetchedUtc: new Date().toISOString(),
+      });
+    }
 
     let heightM = null, heightConfidence = 'none', conflicts = [], rejected = [];
 
@@ -120,7 +134,11 @@ export function reconcileBuildings({
       // value cannot win by having the higher nominal confidence.
       const viable = [];
       for (const h of heights) {
-        const chk = storeyCheck(h.value, levels);
+        // The storey gate exists to catch estimates that imply an impossible
+        // floor height. A lidar measurement is not an estimate — if it disagrees
+        // with a levels tag, the tag is the suspect party — so it is exempt, and
+        // the disagreement surfaces as a conflict instead.
+        const chk = h.sourceId === 'usgs-lidar-lpc' ? null : storeyCheck(h.value, levels);
         if (chk && !chk.ok) {
           rejected.push({ ...h, reason: chk.reason });
           warnings.push({
@@ -165,6 +183,7 @@ export function reconcileBuildings({
         ? conflicts.map((c) => ({ sourceId: c.rejected.sourceId, value: c.rejected.value, deltaRel: Number(c.deltaRel.toFixed(3)) }))
         : null,
       roofShape: match?.cand.b.roofShape ?? null,
+      lidar: lidarById.get(osm.id) ?? null,
       overtureId: match?.cand.b.id ?? null,
     });
   }
